@@ -4,142 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Itnesh Kumar | GenAI NLP Data Scientist</title>
+    <title>Itnesh Kumar | Lead Data Scientist Portfolio</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --bg: #f4f7f6;
-            --text: #333;
+            --primary: #0f172a;
+            --accent: #38bdf8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             margin: 0;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
         }
 
         .container {
-            max-width: 1100px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 40px auto;
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 20px;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
             padding: 0 20px;
         }
 
-        /* Sidebar Styling */
+        /* Enhanced Sidebar */
         .sidebar {
             background: var(--primary);
             color: var(--white);
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px 30px;
+            border-radius: 20px;
             height: fit-content;
+            position: sticky;
+            top: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .profile-img {
-            width: 100%;
-            aspect-ratio: 1/1;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             border: 4px solid var(--accent);
-            margin-bottom: 20px;
+            padding: 5px;
             object-fit: cover;
-            background: #3e4f5f; /* Fallback color */
+            transition: transform 0.5s ease;
         }
+
+        .profile-img:hover { transform: rotate(5deg) scale(1.05); }
 
         .sidebar h1 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: -0.025em;
+            margin: 15px 0 5px;
         }
 
-        .sidebar p.title {
+        .sidebar .title {
             color: var(--accent);
-            text-align: center;
-            font-weight: bold;
-            margin-top: 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        /* Contact Link Styling */
-        .contact-info {
-            margin-top: 30px;
-            font-size: 0.9rem;
-        }
-
+        /* Interactive Contact Icons */
+        .contact-info { margin-top: 40px; }
         .contact-item {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
 
         .contact-item a {
-            color: var(--white);
+            color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.3s;
+            margin-left: 10px;
         }
 
-        .contact-item a:hover {
-            color: var(--accent);
-            text-decoration: underline;
-        }
+        .contact-item:hover a { color: var(--accent); }
 
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin: 3px;
-            font-size: 0.8rem;
-        }
-
-        /* Main Content Styling */
+        /* Modern Project Cards */
         .main-content {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: transparent;
         }
 
-        section { margin-bottom: 40px; }
+        section { margin-bottom: 50px; }
 
         h2 {
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
             color: var(--primary);
-            text-transform: uppercase;
-            font-size: 1.2rem;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .project-card {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .project-card:last-child { border: none; }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
 
-        .tech-icons {
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .tech-pill {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+
+        /* Skill Chips */
+        .skill-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-            align-items: center;
+            gap: 8px;
         }
 
-        .tech-icons img {
-            height: 28px;
-            transition: transform 0.3s;
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
-        .tech-icons img:hover { transform: scale(1.15); }
-
-        @media (max-width: 850px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { text-align: center; }
-            .contact-item { justify-content: center; }
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; margin: 0; }
+            .sidebar { position: relative; top: 0; border-radius: 0; }
         }
     </style>
 </head>
@@ -147,89 +188,106 @@
 
 <div class="container">
     <aside class="sidebar">
-        <img src="new.png" alt="Itnesh Kumar" class="profile-img">
-        <h1>ITNESH KUMAR</h1>
-        <p class="title">GenAI NLP Data Scientist</p>
+        <div class="profile-container">
+            <img 
+                src="new.png" 
+                alt="Itnesh Kumar" 
+                class="profile-img"
+                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Itnesh+Kumar&background=38bdf8&color=fff&size=300';">
+            <h1>ITNESH KUMAR</h1>
+            <p class="title">Lead Data Scientist</p>
+        </div>
 
         <div class="contact-info">
             <div class="contact-item">
-                📧 <a href="mailto:itneshkumar@gmail.com">itneshkumar@gmail.com</a>
+                <span>📧</span>
+                <a href="mailto:itneshkumar@gmail.com">itneshkumar@gmail.com</a>
             </div>
             <div class="contact-item">
-                🔗 <a href="https://linkedin.com/in/itneshkumar" target="_blank">linkedin.com/in/itneshkumar</a>
+                <span>🔗</span>
+                <a href="https://linkedin.com/in/itneshkumar" target="_blank">LinkedIn Profile</a>
             </div>
             <div class="contact-item">
-                📞 <a href="tel:+918010112762">+91 8010112762</a>
+                <span>📞</span>
+                <a href="tel:+918010112762">+91 8010112762</a>
             </div>
             <div class="contact-item">
-                📍 NCR Delhi, India
+                <span>📍</span>
+                <a href="#">NCR Delhi, India</a>
             </div>
         </div>
 
-        <div style="margin-top: 30px;">
-            <h3>Skills</h3>
-            <div class="skill-tag">NLP</div>
-            <div class="skill-tag">LLM</div>
-            <div class="skill-tag">GenAI</div>
-            <div class="skill-tag">Computer Vision</div>
-            <div class="skill-tag">LangChain</div>
-            <div class="skill-tag">Docker</div>
-            <div class="skill-tag">PyTorch</div>
-            <div class="skill-tag">FastAPI</div>
+        <div style="margin-top: 40px;">
+            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">CORE EXPERTISE</h3>
+            <div class="skill-group">
+                <span class="skill-tag">GenAI</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">LLMs</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">CV</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Agentic AI</span>
+            </div>
         </div>
     </aside>
 
     <main class="main-content">
-        <section id="summary">
-            <h2>Professional Summary</h2>
-            <p>
-                GenAI NLP Data Scientist at Fractal Analytics with 7+ years of experience building agentic chatbots, 
-                advanced RAG pipelines, and hybrid search systems. Specializing in clean architecture for 
-                production-ready models across NLP, Computer Vision, and Statistical modeling.
+        <section>
+            <h2>Summary</h2>
+            <p style="font-size: 1.1rem; color: var(--text-muted);">
+                Lead Data Scientist specializing in **Large Language Models** and **Generative AI**. 
+                Proven track record in architecting agentic RAG pipelines and end-to-end CV systems 
+                for enterprise-scale applications. Over 7 years of deep-tech experience.
             </p>
         </section>
 
-        <section id="projects">
-            <h2>Key Projects</h2>
-
-            <div class="project-card">
-                <h3>VKYC (Video KYC Service)</h3>
-                <p>A comprehensive verification service featuring Document Matching (Aadhaar/PAN) using LayoutLMV2 and Visual QNA, and Video Verification (Head movement & Eye blinking detection).</p>
-                <div class="tech-icons">
-                    <img src="https://www.vectorlogo.zone/logos/docker/docker-official.svg" alt="Docker">
-                    <img src="https://www.vectorlogo.zone/logos/python/python-official.svg" alt="Python">
-                    <img src="https://static.streamlit.io/identity-light-insignia.svg" alt="Streamlit">
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h3>VKYC: Video KYC Intelligence</h3>
+                    <p>Architected a secure verification system using LayoutLMV2 for intelligent document parsing and MediaPipe for biometric liveness detection.</p>
+                    <div class="tech-stack">
+                        <span class="tech-pill">LayoutLM</span>
+                        <span class="tech-pill">Computer Vision</span>
+                        <span class="tech-pill">Docker</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <h3>OCULUS Service</h3>
-                <p>Unified social media management tool (FB, LinkedIn, Twitter, Instagram) featuring sentiment analysis, summarization, and automated campaign scheduling.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>TSDR (Traffic Sign Detection)</h3>
-                <p>Recognizing 100+ driver alerts from street imagery. Utilizes ResNet50 and GPU optimization to reduce manual data effort by 80%.</p>
-                <div class="tech-icons">
-                    <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="Tensorflow">
-                    <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="Flask">
+                <div class="project-card">
+                    <h3>OCULUS Service</h3>
+                    <p>Multi-channel social intelligence platform leveraging advanced sentiment analysis and automated summarization for executive campaign tracking.</p>
+                    <div class="tech-stack">
+                        <span class="tech-pill">NLP</span>
+                        <span class="tech-pill">Transformers</span>
+                        <span class="tech-pill">FastAPI</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <h3>Privacy Keeper</h3>
-                <p>Real-time face and license plate blurring for privacy protection using YOLO and MTCNN models trained on specialized Indian datasets.</p>
+                <div class="project-card">
+                    <h3>Privacy Keeper</h3>
+                    <p>Real-time redaction engine using YOLOv8 to identify and blur sensitive PII (Faces, License Plates) in high-traffic video streams.</p>
+                    <div class="tech-stack">
+                        <span class="tech-pill">YOLOv8</span>
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">OpenCV</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="tech-stack">
-            <h2>Technical Expertise</h2>
-            <ul>
-                <li><strong>Machine Learning:</strong> AutoML PyCaret, Transformers, Rasa, Tacotron.</li>
-                <li><strong>Computer Vision:</strong> ResNet, VGG, YOLO, UNet, Mask-RCNN, OpenCV.</li>
-                <li><strong>Databases:</strong> Postgres, MySQL, MongoDB, Milvus DB, MinIO.</li>
-                <li><strong>Cloud & DevOps:</strong> AWS, Docker, Kubernetes, Kafka, PySpark.</li>
-            </ul>
+        <section>
+            <h2>Technical Ecosystem</h2>
+            <div class="project-card" style="border-left: 4px solid var(--accent);">
+                <ul style="column-count: 2; margin: 0; padding-left: 20px;">
+                    <li><strong>LLM:</strong> LangChain, LlamaIndex, RAG</li>
+                    <li><strong>Vision:</strong> ResNet, Mask-RCNN, UNet</li>
+                    <li><strong>DevOps:</strong> Kubernetes, AWS, Kafka</li>
+                    <li><strong>Data:</strong> Milvus, MongoDB, PostGreSQL</li>
+                </ul>
+            </div>
         </section>
     </main>
 </div>
