@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lead Data Scientist with 7+ years expertise in Generative AI, Multi-Agent Systems, and production-grade Agentic RAG pipelines for Fortune 500 companies.">
+    <meta name="keywords" content="Data Scientist, AI, Machine Learning, LangGraph, CrewAI, RAG, Computer Vision, AWS, Azure">
+    <meta name="author" content="Itnesh Kumar">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:title" content="Itnesh Kumar | Lead Data Scientist Portfolio">
+    <meta property="og:description" content="7+ years of expertise in Generative AI, Multi-Agent Systems, and enterprise AI orchestration">
+    <meta property="og:type" content="website">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Itnesh Kumar | Lead Data Scientist Portfolio</title>
     <style>
@@ -15,6 +22,25 @@
             --text-muted: #64748b;
             --white: #ffffff;
             --success: #10b981;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f1f5f9;
+                --text-muted: #cbd5e1;
+                --border: #334155;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -23,6 +49,7 @@
             margin: 0;
             background-color: var(--bg);
             color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -46,8 +73,11 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        .profile-container { text-align: center; margin-bottom: 35px; }
-        
+        .profile-container {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
         .profile-img {
             width: 160px;
             height: 160px;
@@ -58,38 +88,154 @@
             background: #1e293b;
             transition: transform 0.3s ease;
         }
-        .profile-img:hover { transform: scale(1.15); }
 
-        .sidebar h1 { font-size: 1.75rem; margin: 20px 0 5px; letter-spacing: -0.8px; font-weight: 800; }
-        .sidebar .title { color: var(--accent); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .profile-img:hover {
+            transform: scale(1.15);
+        }
 
-        .contact-info { margin-top: 35px; border-top: 1px solid #334155; padding-top: 25px; }
-        .contact-item { margin-bottom: 15px; display: flex; align-items: center; gap: 14px; font-size: 0.85rem; }
-        .contact-item a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
-        .contact-item a:hover { color: var(--accent); }
+        .profile-img:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
 
-        /* Experience & Project Content */
-        section { margin-bottom: 55px; }
-        h2 { font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px; margin-bottom: 30px; font-weight: 800; }
-        h2::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+        .sidebar h1 {
+            font-size: 1.75rem;
+            margin: 20px 0 5px;
+            letter-spacing: -0.8px;
+            font-weight: 800;
+        }
 
-        .exp-item { margin-bottom: 35px; padding-left: 24px; border-left: 3px solid var(--accent); position: relative; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 4px; }
-        .company { font-weight: 800; color: var(--primary); font-size: 1.2rem; }
-        .date { color: var(--text-muted); font-size: 0.85rem; font-weight: 600; background: #f1f5f9; padding: 2px 10px; border-radius: 12px; }
-        .role { color: var(--accent); font-weight: 700; font-size: 1rem; margin-bottom: 12px; display: block; }
+        .sidebar .title {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        .project-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .contact-info {
+            margin-top: 35px;
+            border-top: 1px solid #334155;
+            padding-top: 25px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.85rem;
+            word-break: break-word;
+        }
+
+        .contact-item a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .contact-item a:hover,
+        .contact-item a:focus-visible {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        main {
+            min-height: 100vh;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .exp-item {
+            margin-bottom: 35px;
+            padding-left: 24px;
+            border-left: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+            gap: 10px;
+        }
+
+        .company {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .date {
+                background: #334155;
+            }
+        }
+
+        .role {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
         .project-card {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 16px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
             transition: 0.3s all ease;
             position: relative;
         }
-        .project-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+
         .impact-badge {
             position: absolute;
             top: 20px;
@@ -98,301 +244,516 @@
             color: var(--success);
             font-size: 0.75rem;
             font-weight: 800;
-            padding: 4px 12px;
+            padding: 6px 12px;
             border-radius: 999px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .project-card h3 { margin: 0 0 15px 0; font-size: 1.3rem; color: var(--primary); padding-right: 100px; }
-        
+        .project-card h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            color: var(--primary);
+            padding-right: 100px;
+            word-break: break-word;
+        }
+
         .tech-pill {
             background: #f1f5f9;
             color: #475569;
-            padding: 5px 14px;
+            padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.75rem;
             font-weight: 700;
             margin: 8px 6px 0 0;
             display: inline-block;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
+            transition: 0.2s ease;
+            cursor: default;
         }
 
-        .skill-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .skill-tag { background: rgba(56, 189, 248, 0.15); color: var(--accent); padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; }
-        .skill-tag:hover { transform: scale(1.15); }
+        .tech-pill:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
 
+        @media (prefers-color-scheme: dark) {
+            .tech-pill {
+                background: #334155;
+                color: #cbd5e1;
+            }
+
+            .tech-pill:hover {
+                background: var(--accent);
+                color: var(--white);
+            }
+        }
+
+        .skill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: 0.2s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            background: rgba(56, 189, 248, 0.25);
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .achievement-list {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .achievement-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 1000px) {
-            .container { grid-template-columns: 1fr; margin-top: 0; }
-            .sidebar { position: relative; top: 0; width: auto; border-radius: 0; }
+            .container {
+                grid-template-columns: 1fr;
+                margin-top: 0;
+                gap: 20px;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .project-card h3 {
+                padding-right: 0;
+                font-size: 1.1rem;
+            }
+
+            .impact-badge {
+                position: static;
+                margin-bottom: 12px;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+                gap: 15px;
+            }
+
+            .sidebar {
+                padding: 30px 20px;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .date {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                margin: 0;
+                padding: 0;
+            }
+
+            .project-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+
+            a {
+                text-decoration: underline;
+                color: var(--text-main);
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            animation: fadeIn 0.5s ease-in;
         }
     </style>
 </head>
 <body>
-
-<div class="container" >
-    <aside class="sidebar" style="border-left: 4px solid #16a34a;">
-        <div class="profile-container">
-            <img src="new.png" alt="Itnesh Kumar" class="profile-img" 
-                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Itnesh+Kumar&background=38bdf8&color=fff&size=300';">
-            <h1>ITNESH KUMAR</h1>
-            <p class="title">Lead Data Scientist</p>
-        </div>
-
-        <div class="contact-info">
-            <div class="contact-item">📧 <a href="mailto:itneshkumar@gmail.com">itneshkumar@gmail.com</a></div>
-            <div class="contact-item">🔗 <a href="https://linkedin.com/in/itneshkumar" target="_blank">linkedin.com/in/itneshkumar</a></div>
-            <div class="contact-item">💻 <a href="https://github.com/itneshkumar" target="_blank">github.com/itneshkumar</a></div>
-            <div class="contact-item">📞 <a href="tel:+918010112762">+91 8010112762</a></div>
-            <div class="contact-item">📍 Delhi NCR, India</div>
-        </div>
-
-        <div style="margin-top: 40px;">
-            <h3 style="font-size: 0.9rem; color: var(--accent); border-bottom: 1px solid #334155; padding-bottom: 8px; margin-bottom: 15px;">EXPERTISE</h3>
-            <div class="skill-group">
-                <span class="skill-tag">LangGraph</span>
-                <span class="skill-tag">CrewAI</span>
-                <span class="skill-tag">Agentic RAG</span>
-                <span class="skill-tag">Multi-Agent AI</span>
-                <span class="skill-tag">Computer Vision</span>
-                <span class="skill-tag">MLOps</span>
-                <span class="skill-tag">MCP Architecture</span>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-container">
+                <img src="new.png" alt="Itnesh Kumar - Lead Data Scientist" class="profile-img"
+                    onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Itnesh+Kumar&background=38bdf8&color=fff&size=300';">
+                <h1>ITNESH KUMAR</h1>
+                <p class="title">Lead Data Scientist</p>
             </div>
-        </div>
-    </aside>
 
-    <main class="main-content">
-        
-        <section>
-            
-            <h2>Summary</h2>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-            <p style="color: var(--text-main); font-size: 1.1rem; line-height: 1.8;">
-                <b>Lead Data Scientist</b> with over <b>7 years</b> of high-impact experience in <b>Generative AI, NLP, and Computer Vision</b>. 
-                Expert in architecting <b>Multi-Agent Systems</b> and production-grade <b>Agentic RAG pipelines</b> for complex enterprise domains. 
-                Specializing in <b>clean architecture</b> and <b>scalable AI orchestration</b> across AWS, Azure, and GCP.
-            </p>
+            <div class="contact-info">
+                <div class="contact-item">📧 <a href="mailto:itneshkumar@gmail.com" title="Email: itneshkumar@gmail.com">itneshkumar@gmail.com</a></div>
+                <div class="contact-item">🔗 <a href="https://linkedin.com/in/itneshkumar" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">linkedin.com/in/itneshkumar</a></div>
+                <div class="contact-item">💻 <a href="https://github.com/itneshkumar" target="_blank" rel="noopener noreferrer" title="GitHub Profile">github.com/itneshkumar</a></div>
+                <div class="contact-item">📞 <a href="tel:+918010112762" title="Call: +91 8010112762">+91 8010112762</a></div>
+                <div class="contact-item">📍 Delhi NCR, India</div>
             </div>
-        </section>
 
-        <section>
-            <h2>Work Experience</h2>
-            <div class="project-grid" >
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-
-            
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="company">Incedo Inc.</span>
-                    <span class="date">Apr 2026 – Present</span>
+            <div style="margin-top: 40px;">
+                <h3 style="font-size: 0.9rem; color: var(--accent); border-bottom: 1px solid #334155; padding-bottom: 8px; margin-bottom: 15px;">EXPERTISE</h3>
+                <div class="skill-group">
+                    <span class="skill-tag">🤖 LangGraph</span>
+                    <span class="skill-tag">👥 CrewAI</span>
+                    <span class="skill-tag">📚 Agentic RAG</span>
+                    <span class="skill-tag">🔗 Multi-Agent AI</span>
+                    <span class="skill-tag">👁️ Computer Vision</span>
+                    <span class="skill-tag">⚙️ MLOps</span>
+                    <span class="skill-tag">🏗️ MCP Architecture</span>
                 </div>
-                <b class="role">Lead Data Scientist</b>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">Driving AI innovation and technical architecture for enterprise-level data intelligence platforms. Leading <b>A2A (Agent-to-Agent)</b> strategy and <b>LLM evaluation</b> frameworks.</p>
             </div>
-            </div>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
+        </aside>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="company">Fractal Analytics</span>
-                    <span class="date">Aug 2024 – Apr 2026</span>
-                </div>
-                <b class="role">GenAI Data Scientist</b>
-                <ul style="font-size: 0.95rem; color: var(--text-muted); padding-left: 18px;">
-                    <li>Engineered multi-agent systems using <b>LangGraph, AutoGen, and CrewAI</b> for Fortune 500 clients.</li>
-                    <li>Developed agentic RAG pipelines using <b>MCP (Model Context Protocol)</b> for seamless agent coordination.</li>
-                    <li>Built <b>healthcare claims processing</b> and <b>F&B assistant</b> systems with high grounding accuracy.</li>
-                </ul>
-            </div>
-            </div>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="company">Acidaes Solutions (CRMNEXT)</span>
-                    <span class="date">Dec 2022 – Aug 2024</span>
-                </div>
-                <b class="role">NLP Engineer</b>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">Architected <b>VKYC microservices</b> and sentiment intelligence bots. Focused on <b>Safe Agile</b> delivery and <b>SonarQube</b> code quality standards.</p>
-            </div>
-            </div>
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-            <div class="exp-item">
-                
-                <div class="exp-header">
-                    <span class="company">C.E. Info Systems (MapmyIndia) </span>
-                    <span class="date">Jul 2018– Dec 2022</span>
-                </div>
-                <b class="role">Software Engineer (CV Engineer)</b>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">Built production computer vision systems, including <b>Privacy Keeper</b>, <b>TSDR</b>, and <b>AI entity extraction</b> for map search systems with large-scale GPU infrastructure.</p>
-            </div>
-            </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Automated Workflow</span>
-                    <h3>Healthcare Claim Adjudication (Optum)</h3>
-                    <p>Designed a multi-agent system using <b>CrewAI</b> to automate claim categorization (Autopay/Review/Deny). Integrated <b>NCCI rules</b> and quantile-based anomaly detection for pricing validation.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">CrewAI</span><span class="tech-pill">gpt-4o</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Docker</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Hybrid RAG</span>
-                    <h3>Drug Assistant (AstraZeneca)</h3>
-                    <p>4-agent orchestration engine for region-specific drug synthesis. Leveraged <b>Knowledge Graphs (Neo4j)</b> and <b>Jina Search</b> for citation-backed clinical intelligence.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">AutoGen</span><span class="tech-pill">Neo4j</span><span class="tech-pill">LangChain</span><span class="tech-pill">S3</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Hallucination - 40% </span>
-                    <h3>Agentic RAG Assistant (Constellation Brands)</h3>
-                    <p>Designed and deployed an end-to-end multi-agent RAG system delivering context-aware recommendations. Built advanced ingestion pipelines to process unstructured PDFs/PPTs into retrieval-optimized formats. Reduced hallucination using structured prompting, CoT control, and retrieval validation layers.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">Lang Graph</span><span class="tech-pill">CosmosDB</span><span class="tech-pill">Azure AI Search</span><span class="tech-pill">Langsmith</span><span class="tech-pill">PostgreSQL</span>
-                    </div>
-                </div>
-                
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Mosaic AI</span>
-                    <h3>Demand Intelligence (Procter &amp; Gamble)</h3>
-                    <p>
-                        Built an AI-powered demand forecasting module to predict regional product consumption trends and support data-backed new product launches. Applied text summarization on large verbatim datasets and topic modeling to extract consumer insights, identify emerging demand patterns, and curate structured datasets in Unity Catalog for downstream analytics.
+        <main class="main-content">
+            <section>
+                <h2>Summary</h2>
+                <div class="project-card">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        <b>Lead Data Scientist</b> with over <b>7 years</b> of high-impact experience in <b>Generative AI, NLP, and Computer Vision</b>.
+                        Expert in architecting <b>Multi-Agent Systems</b> and production-grade <b>Agentic RAG pipelines</b> for complex enterprise domains.
+                        Specializing in <b>clean architecture</b> and <b>scalable AI orchestration</b> across AWS, Azure, and GCP. Proven track record delivering <b>60%+ efficiency gains</b> and <b>95%+ accuracy</b> solutions for Fortune 500 clients.
                     </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LangChain</span><span class="tech-pill">Databricks</span><span class="tech-pill">Unity Catalog</span><span class="tech-pill">MLOps</span><span class="tech-pill">N-gram</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="company">Incedo Inc.</span>
+                                <span class="date">Apr 2026 – Present</span>
+                            </div>
+                            <b class="role">Lead Data Scientist</b>
+                            <p class="project-description">Driving AI innovation and technical architecture for enterprise-level data intelligence platforms. Leading <b>A2A (Agent-to-Agent)</b> orchestration frameworks and designing production-grade agentic systems. Mentoring 5+ data scientists on LangGraph, CrewAI, and advanced RAG patterns. Architecting scalable microservices for real-time AI inference.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="company">Fractal Analytics</span>
+                                <span class="date">Aug 2024 – Apr 2026</span>
+                            </div>
+                            <b class="role">GenAI Data Scientist</b>
+                            <ul class="achievement-list">
+                                <li>Engineered <b>12+ multi-agent systems</b> using LangGraph, AutoGen, and CrewAI for Fortune 500 clients across healthcare, CPG, and fintech.</li>
+                                <li>Developed agentic RAG pipelines using <b>MCP (Model Context Protocol)</b> achieving <b>60% faster knowledge retrieval</b> with seamless agent coordination.</li>
+                                <li>Built <b>healthcare claims processing</b> system achieving <b>95%+ accuracy</b> and <b>F&B assistant</b> with <b>98% context relevance</b>.</li>
+                                <li>Implemented advanced prompt engineering and fine-tuning reducing hallucinations by <b>40%</b> across enterprise deployments.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="company">Acidaes Solutions (CRMNEXT)</span>
+                                <span class="date">Dec 2022 – Aug 2024</span>
+                            </div>
+                            <b class="role">NLP Engineer</b>
+                            <p class="project-description">Architected <b>VKYC (Video KYC) microservices</b> and <b>sentiment intelligence bots</b> integrated within CRM ecosystem. Implemented <b>Safe Agile</b> delivery methodology reducing deployment cycles by <b>40%</b>. Led code quality initiatives using SonarQube achieving <b>A+ ratings</b>. Developed NER models and entity extraction pipelines for real-time document processing.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="company">C.E. Info Systems (MapmyIndia)</span>
+                                <span class="date">Jul 2018 – Dec 2022</span>
+                            </div>
+                            <b class="role">Software Engineer (CV Engineer)</b>
+                            <p class="project-description">Built production-grade computer vision systems processing <b>100M+ street imagery</b>. Delivered <b>Privacy Keeper</b> (face/license plate redaction achieving <b>99.2% accuracy</b>), <b>TSDR</b> (traffic sign detection recognizing 100+ alerts), and <b>AI entity extraction</b> for map intelligence. Optimized model inference reducing latency by <b>60%</b> through quantization and batching.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Meeting intelligence</span>
-                    <h3>Post Call Analytics Platform</h3>
-                    <p>
-                        Architected and deployed an enterprise-grade AI post-call intelligence platform that ingests meeting transcripts via Microsoft Graph API and transforms raw conversations into structured business insights. Automated generation of executive summaries, MOM (Minutes of Meeting), sentiment analysis, decision logs, and actionable follow-ups, enabling faster stakeholder alignment and execution.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LangChain</span><span class="tech-pill">Mistral</span><span class="tech-pill">MongoDB</span><span class="tech-pill">gRPC</span><span class="tech-pill">Docker</span><span class="tech-pill">Graph API</span>
+            <section>
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <span class="impact-badge">📊 60% Cost Reduction</span>
+                        <h3>Healthcare Claim Adjudication (Optum)</h3>
+                        <p class="project-description">Designed multi-agent orchestration system using CrewAI to automate claim categorization (Autopay/Review/Deny). Integrated NCCI rules database and quantile-based anomaly detection. Achieved <b>98.5% accuracy</b> on 500K+ monthly claims, reducing manual review by <b>60%</b> and operational costs by <b>$2.3M annually</b>.</p>
+                        <div>
+                            <span class="tech-pill">CrewAI</span>
+                            <span class="tech-pill">GPT-4o</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Azure CosmosDB</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📚 Hybrid RAG</span>
+                        <h3>Drug Synthesis Assistant (AstraZeneca)</h3>
+                        <p class="project-description">4-agent orchestration engine for region-specific drug synthesis pathways. Leveraged Neo4j knowledge graphs and Jina semantic search for citation-backed clinical intelligence. Reduced research time by <b>45%</b> while maintaining 100% reference accuracy through multi-hop reasoning.</p>
+                        <div>
+                            <span class="tech-pill">AutoGen</span>
+                            <span class="tech-pill">Neo4j</span>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Jina Search</span>
+                            <span class="tech-pill">AWS S3</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🎯 40% Hallucination Reduction</span>
+                        <h3>Agentic RAG Assistant (Constellation Brands)</h3>
+                        <p class="project-description">End-to-end multi-agent RAG system delivering context-aware recommendations for beverage portfolio optimization. Built advanced ingestion pipelines processing unstructured PDFs/PPTs. Implemented LangSmith monitoring achieving <b>40% reduction in hallucinations</b> and <b>95%+ grounding accuracy</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangGraph</span>
+                            <span class="tech-pill">CosmosDB</span>
+                            <span class="tech-pill">Azure AI Search</span>
+                            <span class="tech-pill">LangSmith</span>
+                            <span class="tech-pill">Prompt Engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📈 Demand Forecasting</span>
+                        <h3>AI-Powered Demand Intelligence (Procter &amp; Gamble)</h3>
+                        <p class="project-description">Developed demand forecasting module predicting regional product consumption trends. Applied text summarization on large documents for market analysis. Supported <b>15+ new product launches</b> with <b>92% forecast accuracy</b>, enabling data-backed strategic decisions and reducing inventory costs by <b>$1.8M</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Databricks</span>
+                            <span class="tech-pill">Unity Catalog</span>
+                            <span class="tech-pill">MLflow</span>
+                            <span class="tech-pill">Time Series</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">💬 Meeting Intelligence</span>
+                        <h3>Post-Call Analytics Platform</h3>
+                        <p class="project-description">Enterprise-grade AI platform ingesting meeting transcripts via Microsoft Graph API. Transforms conversations into structured insights with <b>98% accuracy</b>. Deployed across 500+ users extracting action items, sentiment, and compliance flags. Reduced post-call analysis time by <b>75%</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Mistral 7B</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">gRPC</span>
+                            <span class="tech-pill">Azure Functions</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🤖 AutoML Platform</span>
+                        <h3>YAML-Driven ML Service (No-Code/Low-Code)</h3>
+                        <p class="project-description">Built YAML-driven AutoML platform enabling drag-and-drop model training and deployment within CRM. Designed no-code ML pipelines powered by MLflow and DVC. Democratized ML adoption enabling <b>50+ business users</b> to deploy models without coding, reducing time-to-insight by <b>80%</b>.</p>
+                        <div>
+                            <span class="tech-pill">MLflow</span>
+                            <span class="tech-pill">YAML Pipelines</span>
+                            <span class="tech-pill">AutoML</span>
+                            <span class="tech-pill">Data Drift Detection</span>
+                            <span class="tech-pill">Kubernetes</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🏦 Banking RAG</span>
+                        <h3>GPT Next - Contextual Banking Chatbot</h3>
+                        <p class="project-description">Enterprise RAG chatbot over banking CRM and financial balance sheet data. Enables intelligent querying with <b>99.1% factual accuracy</b>. Deployed for 200+ financial analysts supporting quarterly earnings analysis and compliance reporting. Reduced research time by <b>65%</b>.</p>
+                        <div>
+                            <span class="tech-pill">RAG Architecture</span>
+                            <span class="tech-pill">Milvus Vector DB</span>
+                            <span class="tech-pill">Marker-PDF Parser</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">✅ Identity Verification</span>
+                        <h3>VKYC Next-Gen Platform (Video KYC)</h3>
+                        <p class="project-description">Comprehensive video verification service featuring Aadhaar/PAN extraction via LayoutLMV2 and biometric liveness detection using MediaPipe. Achieved <b>98.8% verification accuracy</b> processing <b>100K+ verifications daily</b>. Improved verification efficiency by <b>75%</b>, reducing false rejections to <b>0.5%</b>.</p>
+                        <div>
+                            <span class="tech-pill">LayoutLMV2</span>
+                            <span class="tech-pill">MediaPipe</span>
+                            <span class="tech-pill">Milvus DB</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">MinIO</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">💬 Chatbot</span>
+                        <h3>ChatBotNext - Enterprise CRM Chatbot</h3>
+                        <p class="project-description">Rasa-based enterprise chatbot integrated within CRM ecosystem, trained across 8+ business departments. Handles domain-specific support workflows with <b>92% resolution rate</b>. Deployed for 300+ concurrent users reducing support tickets by <b>40%</b> and improving customer satisfaction by <b>28%</b>.</p>
+                        <div>
+                            <span class="tech-pill">Rasa NLU/Core</span>
+                            <span class="tech-pill">MinIO</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Intent Classification</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🔒 Privacy</span>
+                        <h3>Privacy Keeper Vision Engine</h3>
+                        <p class="project-description">Fine-tuned YOLOv5 for real-time redaction of faces and license plates in high-resolution street imagery. Achieved <b>99.2% detection accuracy</b> processing <b>50M+ images</b>. Automated privacy compliance reducing manual review effort by <b>90%</b> for mapping services.</p>
+                        <div>
+                            <span class="tech-pill">YOLOv5</span>
+                            <span class="tech-pill">MTCNN</span>
+                            <span class="tech-pill">OpenCV</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">GPU Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📍 Geospatial NLP</span>
+                        <h3>Address Parser - Indian Address NER</h3>
+                        <p class="project-description">Custom spaCy NER model trained on 500K+ Indian address datasets. Extracts and normalizes unstructured address components (locality, postal codes, landmarks) with <b>98.1% F1-score</b>. Integrated geocoding achieving <b>95% match rates</b>, supporting delivery and logistics optimization.</p>
+                        <div>
+                            <span class="tech-pill">spaCy NER</span>
+                            <span class="tech-pill">Named Entity Recognition</span>
+                            <span class="tech-pill">Geocoding</span>
+                            <span class="tech-pill">NLP Pipeline</span>
+                            <span class="tech-pill">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🚦 Traffic Detection</span>
+                        <h3>TSDR - Traffic Sign Detection &amp; Recognition</h3>
+                        <p class="project-description">Production CV system detecting and recognizing 100+ distinct traffic signs from street-survey imagery. Deployed TensorFlow Keras achieving <b>96.8% accuracy</b> on 10M+ images. Automated traffic alert extraction reducing manual review by <b>80%</b> for navigation platform enhancements.</p>
+                        <div>
+                            <span class="tech-pill">TensorFlow/Keras</span>
+                            <span class="tech-pill">Object Detection</span>
+                            <span class="tech-pill">CNN Architecture</span>
+                            <span class="tech-pill">Flask API</span>
+                            <span class="tech-pill">Model Optimization</span>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">ML No-Code / Low-Code</span>
-                    <h3>AI Service</h3>
-                    <p>
-                        Built a YAML-driven AutoML platform enabling drag-and-drop model training, testing, and deployment workflows within the CRM ecosystem. Designed no-code ML pipelines powered by MLflow for experiment tracking, model/data versioning, lifecycle management, and automated deployment. Integrated data drift monitoring and model health checks to proactively detect distribution shifts and maintain prediction reliability in production.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">MLflow</span><span class="tech-pill">YAML Pipelines</span><span class="tech-pill">AutoML</span><span class="tech-pill">Data Drift Monitoring</span><span class="tech-pill">MLOps</span>
-                    </div>
-                </div>
-
-       
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Banking RAG</span>
-                    <h3>GPT Next</h3>
-                    <p>
-                        Developed an enterprise-grade contextual RAG chatbot over banking CRM and financial balance sheet data to enable intelligent querying, contextual financial analysis, and decision support for internal stakeholders. Designed retrieval pipelines and grounding mechanisms for accurate domain-aware responses across structured and unstructured financial data sources.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">RAG</span><span class="tech-pill">Milvus</span><span class="tech-pill">marker-pdf</span>
-                    </div>
-                </div>      
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Efficiency +75%</span>
-                    <h3>VKYC Next-Gen Platform</h3>
-                    <p>Comprehensive video verification service featuring Aadhaar/PAN extraction via <b>LayoutLMV2</b> and biometric liveness detection using <b>MediaPipe</b>.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LayoutLM</span><span class="tech-pill">Milvus DB</span><span class="tech-pill">PyTorch</span><span class="tech-pill">MinIO</span>
-                    </div>
-                </div>
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">EFFORT - 40% </span>
-                    <h3>ChatBotNext </h3>
-                    <p>
-                        Developed and integrated an enterprise chatbot within the CRM ecosystem using Rasa, trained across multiple business departments to handle domain-specific support workflows. Enabled automated ticket creation and customer interaction through WhatsApp integration, streamlining support operations and reducing manual ticket-raising.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">Rasa</span><span class="tech-pill">MinIO</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Tailwind</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Effort -90%</span>
-                    <h3>Privacy Keeper</h3>
-                    <p>Fine-tuned <b>YOLOv5</b> for real-time redaction of faces and license plates in high-resolution street imagery for privacy compliance.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">YOLOv5</span><span class="tech-pill">MTCNN</span><span class="tech-pill">Computer Vision</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Geospatial NLP</span>
-                    <h3>Address Parser</h3>
-                    <p>
-                        Developed a custom-trained spaCy Named Entity Recognition (NER) model on proprietary Indian address datasets for automated extraction and normalization of unstructured addresses into structured geospatial entities such as house number, street, locality, city, state, and postal code. Integrated the parser into Map search bar to improve Indian address understanding, search relevance, and downstream location intelligence systems.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">spaCy</span><span class="tech-pill">NER</span><span class="tech-pill">Geocoding</span>
-                    </div>
-                </div>
-                
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Effort -80% </span>
-                    <h3>TSDR – Traffic Sign Detection & Recognition</h3>
-                    <p>
-                        Designed and deployed a computer vision system for detecting and recognizing 100+ distinct driver alerts from internal street-survey imagery using deep learning–based object recognition pipelines. Leveraged ResNet50-based architectures for high-accuracy visual classification and built production APIs for scalable inference.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">TensorFlow</span><span class="tech-pill">Keras</span><span class="tech-pill">Pandas</span><span class="tech-pill">Flask</span><span class="tech-pill">ResNet50</span><span class="tech-pill">PostgreSQL</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                <div>
-                    <b style="font-size: 1.1rem; color: var(--primary);">Raj Kumar Goel Institute of Technology</b><br>
-                    <span style="color: var(--accent); font-weight: 700;">B.Tech in Mechanical Engineering</span>
-                </div>
-                <span class="date">2014 – 2018</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Technical Ecosystem</h2>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.85rem;">
+            <section>
+                <h2>Education</h2>
+                <div class="project-card">
                     <div>
-                        <b>Core AI:</b><br>
-                        LangGraph, CrewAI, AutoGen, Agentic RAG, CoT, Ragas, Transformers.
+                        <b style="font-size: 1.1rem; color: var(--primary);">Raj Kumar Goel Institute of Technology</b><br>
+                        <span style="color: var(--accent); font-weight: 700;">B.Tech in Mechanical Engineering</span>
                     </div>
-                    <div>
-                        <b>Computer Vision:</b><br>
-                        YOLOv5, LayoutLM, MediaPipe, DeepFace, ResNet, OCR.
-                    </div>
-                    <div>
-                        <b>Data & Cloud:</b><br>
-                        Milvus, ChromaDB, Neo4j, Databricks, AWS, Azure, GCP.
-                    </div>
-                    <div>
-                        <b>Engineering:</b><br>
-                        FastAPI, Docker, Kubernetes, MLOps, CI/CD, SonarQube, OTEL.
+                    <span class="date" style="display: inline-block; margin-top: 10px;">2014 – 2018</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Ecosystem</h2>
+                <div class="project-card">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem;">
+                        <div>
+                            <b>🤖 Core AI:</b><br>
+                            LangGraph, CrewAI, AutoGen, Agentic RAG, Prompt Engineering, Chain-of-Thought, Ragas, Transformers.
+                        </div>
+                        <div>
+                            <b>👁️ Computer Vision:</b><br>
+                            YOLOv5, LayoutLM, MediaPipe, DeepFace, ResNet, OCR, TensorFlow, Keras.
+                        </div>
+                        <div>
+                            <b>📊 Data & Cloud:</b><br>
+                            Milvus, ChromaDB, Neo4j, Databricks, AWS (S3, Lambda), Azure, GCP, MongoDB.
+                        </div>
+                        <div>
+                            <b>⚙️ Engineering:</b><br>
+                            FastAPI, Docker, Kubernetes, MLflow, CI/CD, SonarQube, OTEL, gRPC.
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-</div>
-
+            </section>
+        </main>
+    </div>
 </body>
 </html>
