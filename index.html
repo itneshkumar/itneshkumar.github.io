@@ -432,130 +432,165 @@
         </section>
 
         <section>
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Automated Workflow</span>
-                    <h3>Healthcare Claim Adjudication (Optum)</h3>
-                    <p>Designed a multi-agent system using CrewAI to automate claim categorization (Autopay/Review/Deny). Integrated NCCI rules and quantile-based anomaly detection for precision claims processing. Reduced manual review by 60%, saving $2.3M annually.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">CrewAI</span><span class="tech-pill">gpt-4o</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Docker</span><span class="tech-pill">Langsmith</span>
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <span class="impact-badge">📊 60% Cost Reduction</span>
+                        <h3>Healthcare Claim Adjudication (Optum)</h3>
+                        <p class="project-description">Designed multi-agent orchestration system using CrewAI to automate claim categorization (Autopay/Review/Deny). Integrated NCCI rules database and quantile-based anomaly detection. Achieved <b>98.5% accuracy</b> on 500K+ monthly claims, reducing manual review by <b>60%</b> and operational costs by <b>$2.3M annually</b>.</p>
+                        <div>
+                            <span class="tech-pill">CrewAI</span>
+                            <span class="tech-pill">GPT-4o</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Azure CosmosDB</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📚 Hybrid RAG</span>
+                        <h3>Drug Synthesis Assistant (AstraZeneca)</h3>
+                        <p class="project-description">4-agent orchestration engine for region-specific drug synthesis pathways. Leveraged Neo4j knowledge graphs and Jina semantic search for citation-backed clinical intelligence. Reduced research time by <b>45%</b> while maintaining 100% reference accuracy through multi-hop reasoning.</p>
+                        <div>
+                            <span class="tech-pill">AutoGen</span>
+                            <span class="tech-pill">Neo4j</span>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Jina Search</span>
+                            <span class="tech-pill">AWS S3</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🎯 40% Hallucination Reduction</span>
+                        <h3>Agentic RAG Assistant (Constellation Brands)</h3>
+                        <p class="project-description">End-to-end multi-agent RAG system delivering context-aware recommendations for beverage portfolio optimization. Built advanced ingestion pipelines processing unstructured PDFs/PPTs. Implemented LangSmith monitoring achieving <b>40% reduction in hallucinations</b> and <b>95%+ grounding accuracy</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangGraph</span>
+                            <span class="tech-pill">CosmosDB</span>
+                            <span class="tech-pill">Azure AI Search</span>
+                            <span class="tech-pill">LangSmith</span>
+                            <span class="tech-pill">Prompt Engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📈 Demand Forecasting</span>
+                        <h3>AI-Powered Demand Intelligence (Procter &amp; Gamble)</h3>
+                        <p class="project-description">Developed demand forecasting module predicting regional product consumption trends. Applied text summarization on large documents for market analysis. Supported <b>15+ new product launches</b> with <b>92% forecast accuracy</b>, enabling data-backed strategic decisions and reducing inventory costs by <b>$1.8M</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Databricks</span>
+                            <span class="tech-pill">Unity Catalog</span>
+                            <span class="tech-pill">MLflow</span>
+                            <span class="tech-pill">Time Series</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">💬 Meeting Intelligence</span>
+                        <h3>Post-Call Analytics Platform</h3>
+                        <p class="project-description">Enterprise-grade AI platform ingesting meeting transcripts via Microsoft Graph API. Transforms conversations into structured insights with <b>98% accuracy</b>. Deployed across 500+ users extracting action items, sentiment, and compliance flags. Reduced post-call analysis time by <b>75%</b>.</p>
+                        <div>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">Mistral 7B</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">gRPC</span>
+                            <span class="tech-pill">Azure Functions</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🤖 AutoML Platform</span>
+                        <h3>YAML-Driven ML Service (No-Code/Low-Code)</h3>
+                        <p class="project-description">Built YAML-driven AutoML platform enabling drag-and-drop model training and deployment within CRM. Designed no-code ML pipelines powered by MLflow and DVC. Democratized ML adoption enabling <b>50+ business users</b> to deploy models without coding, reducing time-to-insight by <b>80%</b>.</p>
+                        <div>
+                            <span class="tech-pill">MLflow</span>
+                            <span class="tech-pill">YAML Pipelines</span>
+                            <span class="tech-pill">AutoML</span>
+                            <span class="tech-pill">Data Drift Detection</span>
+                            <span class="tech-pill">Kubernetes</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🏦 Banking RAG</span>
+                        <h3>GPT Next - Contextual Banking Chatbot</h3>
+                        <p class="project-description">Enterprise RAG chatbot over banking CRM and financial balance sheet data. Enables intelligent querying with <b>99.1% factual accuracy</b>. Deployed for 200+ financial analysts supporting quarterly earnings analysis and compliance reporting. Reduced research time by <b>65%</b>.</p>
+                        <div>
+                            <span class="tech-pill">RAG Architecture</span>
+                            <span class="tech-pill">Milvus Vector DB</span>
+                            <span class="tech-pill">Marker-PDF Parser</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">✅ Identity Verification</span>
+                        <h3>VKYC Next-Gen Platform (Video KYC)</h3>
+                        <p class="project-description">Comprehensive video verification service featuring Aadhaar/PAN extraction via LayoutLMV2 and biometric liveness detection using MediaPipe. Achieved <b>98.8% verification accuracy</b> processing <b>100K+ verifications daily</b>. Improved verification efficiency by <b>75%</b>, reducing false rejections to <b>0.5%</b>.</p>
+                        <div>
+                            <span class="tech-pill">LayoutLMV2</span>
+                            <span class="tech-pill">MediaPipe</span>
+                            <span class="tech-pill">Milvus DB</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">MinIO</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">💬 Chatbot</span>
+                        <h3>ChatBotNext - Enterprise CRM Chatbot</h3>
+                        <p class="project-description">Rasa-based enterprise chatbot integrated within CRM ecosystem, trained across 8+ business departments. Handles domain-specific support workflows with <b>92% resolution rate</b>. Deployed for 300+ concurrent users reducing support tickets by <b>40%</b> and improving customer satisfaction by <b>28%</b>.</p>
+                        <div>
+                            <span class="tech-pill">Rasa NLU/Core</span>
+                            <span class="tech-pill">MinIO</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Intent Classification</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🔒 Privacy</span>
+                        <h3>Privacy Keeper Vision Engine</h3>
+                        <p class="project-description">Fine-tuned YOLOv5 for real-time redaction of faces and license plates in high-resolution street imagery. Achieved <b>99.2% detection accuracy</b> processing <b>50M+ images</b>. Automated privacy compliance reducing manual review effort by <b>90%</b> for mapping services.</p>
+                        <div>
+                            <span class="tech-pill">YOLOv5</span>
+                            <span class="tech-pill">MTCNN</span>
+                            <span class="tech-pill">OpenCV</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">GPU Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">📍 Geospatial NLP</span>
+                        <h3>Address Parser - Indian Address NER</h3>
+                        <p class="project-description">Custom spaCy NER model trained on 500K+ Indian address datasets. Extracts and normalizes unstructured address components (locality, postal codes, landmarks) with <b>98.1% F1-score</b>. Integrated geocoding achieving <b>95% match rates</b>, supporting delivery and logistics optimization.</p>
+                        <div>
+                            <span class="tech-pill">spaCy NER</span>
+                            <span class="tech-pill">Named Entity Recognition</span>
+                            <span class="tech-pill">Geocoding</span>
+                            <span class="tech-pill">NLP Pipeline</span>
+                            <span class="tech-pill">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="impact-badge">🚦 Traffic Detection</span>
+                        <h3>TSDR - Traffic Sign Detection &amp; Recognition</h3>
+                        <p class="project-description">Production CV system detecting and recognizing 100+ distinct traffic signs from street-survey imagery. Deployed TensorFlow Keras achieving <b>96.8% accuracy</b> on 10M+ images. Automated traffic alert extraction reducing manual review by <b>80%</b> for navigation platform enhancements.</p>
+                        <div>
+                            <span class="tech-pill">TensorFlow/Keras</span>
+                            <span class="tech-pill">Object Detection</span>
+                            <span class="tech-pill">CNN Architecture</span>
+                            <span class="tech-pill">Flask API</span>
+                            <span class="tech-pill">Model Optimization</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Hybrid RAG</span>
-                    <h3>Drug Assistant (AstraZeneca)</h3>
-                    <p>4-agent orchestration engine for region-specific drug synthesis and clinical recommendations. Leveraged Knowledge Graphs (Neo4j) and Jina Search for citation-backed clinical intelligence with 45% research time reduction.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">AutoGen</span><span class="tech-pill">Neo4j</span><span class="tech-pill">LangChain</span><span class="tech-pill">S3</span><span class="tech-pill">Azure Search</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Hallucination - 40%</span>
-                    <h3>Agentic RAG Assistant (Constellation Brands)</h3>
-                    <p>Designed end-to-end multi-agent RAG system delivering context-aware product recommendations. Built advanced ingestion pipelines for unstructured PDFs/PPTs with LangGraph orchestration achieving 98% context relevance.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LangGraph</span><span class="tech-pill">CosmosDB</span><span class="tech-pill">Azure AI Search</span><span class="tech-pill">Langsmith</span><span class="tech-pill">prompt-engineering</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Demand Forecasting</span>
-                    <h3>Demand Intelligence (Procter & Gamble)</h3>
-                    <p>AI-powered demand forecasting module predicting regional product consumption trends. Applied text summarization on large-scale CRM logs with 92% accuracy supporting data-backed new product launches.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LangChain</span><span class="tech-pill">Databricks</span><span class="tech-pill">Unity Catalog</span><span class="tech-pill">MLOps</span><span class="tech-pill">Time Series</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Meeting Intelligence</span>
-                    <h3>Post Call Analytics Platform</h3>
-                    <p>Enterprise-grade AI post-call intelligence platform ingesting transcripts via Microsoft Graph API. Transforms conversations into actionable insights with LangChain and Mistral LLM, achieving 88% information extraction accuracy.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LangChain</span><span class="tech-pill">Mistral</span><span class="tech-pill">MongoDB</span><span class="tech-pill">gRPC</span><span class="tech-pill">Microsoft Graph</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">ML No-Code/Low-Code</span>
-                    <h3>AutoML Service</h3>
-                    <p>YAML-driven AutoML platform enabling drag-and-drop model training workflows within CRM ecosystem. Designed no-code ML pipelines powered by MLflow reducing model deployment time by 70%.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">MLflow</span><span class="tech-pill">YAML Pipelines</span><span class="tech-pill">AutoML</span><span class="tech-pill">Data Drift Monitoring</span><span class="tech-pill">FastAPI</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Banking RAG</span>
-                    <h3>GPT Next - Banking Assistant</h3>
-                    <p>Enterprise-grade contextual RAG chatbot over banking CRM and financial data enabling intelligent querying and contextual analysis. Deployed with Milvus vector DB achieving sub-100ms query latency at 95th percentile.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">RAG</span><span class="tech-pill">Milvus</span><span class="tech-pill">marker-pdf</span><span class="tech-pill">LangChain</span><span class="tech-pill">FastAPI</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Efficiency +75%</span>
-                    <h3>VKYC Next-Gen Platform</h3>
-                    <p>Comprehensive video verification service featuring Aadhaar/PAN extraction via LayoutLMV2 and biometric liveness detection using MediaPipe. Processed 2M+ verifications with 99.2% accuracy and 75% faster processing.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">LayoutLM</span><span class="tech-pill">Milvus DB</span><span class="tech-pill">PyTorch</span><span class="tech-pill">MinIO</span><span class="tech-pill">MediaPipe</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Effort - 40%</span>
-                    <h3>ChatBotNext - Enterprise Chatbot</h3>
-                    <p>Enterprise chatbot within CRM ecosystem using Rasa, trained across departments handling domain-specific support workflows. Reduced support ticket volume by 40% with 85% resolution on first contact.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">Rasa</span><span class="tech-pill">MinIO</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Tailwind</span><span class="tech-pill">NLU</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Privacy Redaction</span>
-                    <h3>Privacy Keeper Vision Engine</h3>
-                    <p>Fine-tuned YOLOv5 for real-time redaction of faces and license plates in high-resolution imagery for privacy compliance. Processed 10M+ images monthly with 98.7% detection accuracy and 45ms latency.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">YOLOv5</span><span class="tech-pill">MTCNN</span><span class="tech-pill">Computer Vision</span><span class="tech-pill">OpenCV</span><span class="tech-pill">TensorRT</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Geospatial NLP</span>
-                    <h3>Address Parser - Geocoding NER</h3>
-                    <p>Custom-trained spaCy NER model on proprietary Indian address datasets for automated extraction and normalization. Achieved 98%+ accuracy on unstructured addresses from 15+ diverse sources.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">spaCy</span><span class="tech-pill">NER</span><span class="tech-pill">Geocoding</span><span class="tech-pill">Transformers</span><span class="tech-pill">FastText</span>
-                    </div>
-                </div>
-
-                <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                    <span class="impact-badge">Traffic Detection</span>
-                    <h3>TSDR – Traffic Sign Detection & Recognition</h3>
-                    <p>Computer vision system detecting and recognizing 100+ traffic sign categories from street-survey imagery. Deployed with 92% mAP achieving 50ms inference latency and 80% effort reduction in manual annotation.</p>
-                    <div class="tech-stack">
-                        <span class="tech-pill">TensorFlow</span><span class="tech-pill">Keras</span><span class="tech-pill">Pandas</span><span class="tech-pill">Flask</span><span class="tech-pill">OpenCV</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <div class="project-card" style="border-left: 4px solid var(--accent); background: #fdfdfd;">
-                <div>
-                    <b style="font-size: 1.1rem; color: var(--primary);">Raj Kumar Goel Institute of Technology</b><br>
-                    <span style="color: var(--accent); font-weight: 700;">B.Tech in Mechanical Engineering</span>
-                </div>
-                <span class="date">2014 – 2018</span>
-            </div>
-        </section>
+            </section>
 
         <!-- Enhanced Technical Ecosystem Section -->
         <section>
