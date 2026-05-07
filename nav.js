@@ -1,13 +1,13 @@
 // Shared navigation — injected into every page
 function renderNav(activePage) {
   const tabs = [
-    { id: 'index',        icon: '👤', label: 'About',        href: 'index.html' },
-    { id: 'work',         icon: '💼', label: 'Work',          href: 'work.html' },
-    { id: 'projects',     icon: '🚀', label: 'Projects',      href: 'projects.html' },
-    { id: 'publications', icon: '📄', label: 'Publications',  href: 'publications.html' },
-    { id: 'education',    icon: '🎓', label: 'Education',     href: 'education.html' },
-    { id: 'hobbies',      icon: '🎯', label: 'Hobbies',       href: 'hobbies.html' },
-    { id: 'contact',      icon: '✉️', label: 'Contact',       href: 'contact.html' },
+    { id: 'index',        icon: '👤', label: 'About',        href: 'index' },
+    { id: 'work',         icon: '💼', label: 'Work',          href: 'work' },
+    { id: 'projects',     icon: '🚀', label: 'Projects',      href: 'projects' },
+    { id: 'publications', icon: '📄', label: 'Publications',  href: 'publications' },
+    { id: 'education',    icon: '🎓', label: 'Education',     href: 'education' },
+    { id: 'hobbies',      icon: '🎯', label: 'Hobbies',       href: 'hobbies' },
+    { id: 'contact',      icon: '✉️', label: 'Contact',       href: 'contact' },
   ];
 
   const tabsHTML = tabs.map(t => `
@@ -19,7 +19,7 @@ function renderNav(activePage) {
 
   return `
   <nav class="topnav">
-    <a class="nav-brand" href="index.html">
+    <a class="nav-brand" href="index">
       <img class="nav-avatar" src="new.png" alt="IK"
            onerror="this.src='https://ui-avatars.com/api/?name=Itnesh+Kumar&background=e8f2ec&color=1a5c3a&size=80'">
       <div>
@@ -30,7 +30,7 @@ function renderNav(activePage) {
     <div class="nav-tabs">${tabsHTML}</div>
     <div class="nav-right">
       <div class="nav-avail"><span class="avail-dot"></span>Available Q3 2026</div>
-      <a class="nav-cta" href="contact.html">Hire me →</a>
+      <a class="nav-cta" href="contact">Hire me →</a>
     </div>
   </nav>`;
 }
