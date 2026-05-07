@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Itnesh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        
+        /* Navigation Style */
+        .nav-card {
+            background-color: rgba(15, 23, 42, 0.8);
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+        .nav-link:hover { color: #2dd4bf; }
+
+        /* Filter Buttons */
+        .filter-btn {
+            font-family: monospace;
+            font-size: 11px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
+        .filter-btn.active { 
+            background: #0d9488; 
+            color: white; 
+            border-color: #2dd4bf;
+            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+        }
+
+        /* Project Cards */
+        .proj-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .proj-card:hover {
+            border-color: #0d9488;
+            background: rgba(30, 41, 59, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+        }
+        .proj-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #0d9488, transparent);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .proj-card:hover::before { opacity: 1; }
+
+        /* Tech Tags */
+        .stack-pill {
+            font-family: monospace;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #0f172a;
+            color: #94a3b8;
+            border: 1px solid #334155;
+        }
+        .stack-pill:hover {
+            background: #0d9488;
+            border-color: #2dd4bf;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="max-w-6xl mx-auto px-8 pt-8">
+        <nav class="nav-card flex justify-between items-center px-8 py-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <span class="text-xl">👤</span>
+                    <span class="text-sm font-mono text-slate-400">About</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium">
+                <a href="work.html" class="nav-link"><span>💼</span> Work</a>
+                <a href="projects.html" class="nav-link text-teal-400"><span>🚀</span> Projects</a>
+                <a href="publications.html" class="nav-link"><span>📄</span> Publications</a>
+                <a href="education.html" class="nav-link"><span>🎓</span> Education</a>
+                <a href="hobbies.html" class="nav-link"><span>🎯</span> Hobbies</a>
+                <a href="contact.html" class="nav-link"><span>📧</span> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-8 mt-20 mb-24">
+        
+        <div class="mb-12">
+            <h2 class="text-xs font-mono text-teal-500 uppercase tracking-[0.3em] mb-4">Production Systems</h2>
+            <h1 class="text-5xl font-bold mb-6">Featured <span class="text-slate-500 italic font-light">Projects</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl">12 AI systems shipped to production across healthcare, pharma, FMCG, banking, and mapping.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mb-12">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="genai">GenAI / RAG</button>
+            <button class="filter-btn" data-filter="nlp">NLP</button>
+            <button class="filter-btn" data-filter="cv">Computer Vision</button>
+            <button class="filter-btn" data-filter="mlops">MLOps</button>
+        </div>
+
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">↓ 60% costs</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Healthcare</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Healthcare Claim Adjudication — Optum</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Designed a multi-agent orchestration system using CrewAI to automate claim categorisation. Integrated NCCI rules and anomaly detection. <strong class="text-slate-200">98.5% accuracy</strong> on 500K+ monthly claims.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">CrewAI</span><span class="stack-pill">GPT-4o</span><span class="stack-pill">Docker</span><span class="stack-pill">FastAPI</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">↓ 45% research time</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Pharma</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Drug Synthesis Assistant — AstraZeneca</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">4-agent orchestration engine for drug pathways. Leveraged Neo4j knowledge graphs and Jina semantic search for citation-backed clinical intelligence.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">AutoGen</span><span class="stack-pill">Neo4j</span><span class="stack-pill">LangChain</span><span class="stack-pill">Jina</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">↓ 40% hallucinations</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">FMCG</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Agentic RAG Assistant — Constellation Brands</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">End-to-end multi-agent RAG for beverage portfolio optimisation. Advanced ingestion with LangSmith monitoring achieving <strong class="text-slate-200">95%+ grounding accuracy</strong>.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">LangGraph</span><span class="stack-pill">CosmosDB</span><span class="stack-pill">Azure AI Search</span><span class="stack-pill">LangSmith</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">92% accuracy</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">FMCG</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI Demand Intelligence — P&G</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Demand forecasting predicting regional trends. Supported <strong class="text-slate-200">15+ new product launches</strong>, enabling data-backed strategic inventory decisions.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">LangChain</span><span class="stack-pill">Databricks</span><span class="stack-pill">MLflow</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">↓ 75% review time</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Enterprise</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Post-Call Analytics Platform</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">AI ingesting meeting transcripts via Microsoft Graph API. Deployed for <strong class="text-slate-200">500+ users</strong> to extract action items, sentiment, and compliance flags.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">LangChain</span><span class="stack-pill">Mistral 7B</span><span class="stack-pill">MongoDB</span><span class="stack-pill">Azure Functions</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="mlops">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">↓ 80% time-to-insight</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">MLOps</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">YAML-Driven AutoML Platform</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">AutoML platform enabling drag-and-drop training within CRM. Democratised ML for <strong class="text-slate-200">50+ business users</strong> without coding.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">MLflow</span><span class="stack-pill">DVC</span><span class="stack-pill">Kubernetes</span><span class="stack-pill">Docker</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="genai">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">99.1% accuracy</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Banking</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">GPT Next — Banking Chatbot</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Enterprise RAG over banking CRM and balance sheets. Deployed for <strong class="text-slate-200">200+ analysts</strong> supporting quarterly earnings analysis.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">Milvus</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">LangChain</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="cv">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">98.8% verification</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">FinTech</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">VKYC Next-Gen Platform</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Video verification featuring OCR for identification documents and biometric liveness detection. <strong class="text-slate-200">10K+ daily verifications</strong>.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">LayoutLMV2</span><span class="stack-pill">MediaPipe</span><span class="stack-pill">Milvus</span><span class="stack-pill">PyTorch</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="nlp">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">92% resolution</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">CRM</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">ChatBotNext — CRM Chatbot</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Rasa-based enterprise chatbot for <strong class="text-slate-200">300+ concurrent users</strong>. Support tickets reduced by 40%.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">Rasa NLU</span><span class="stack-pill">MongoDB</span><span class="stack-pill">Docker</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="cv">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">99.2% detection</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Mapping</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Privacy Keeper Vision Engine</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">YOLOv5 for real-time redaction of faces and license plates across <strong class="text-slate-200">5M+ images</strong>. Automated privacy compliance for mapping.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">YOLOv5</span><span class="stack-pill">MTCNN</span><span class="stack-pill">OpenCV</span><span class="stack-pill">GPU Opt</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="nlp">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">98.1% F1-score</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Logistics</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Indian Address NER Parser</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Custom spaCy NER trained on 500K+ Indian address datasets. Supporting delivery and logistics optimisation at scale.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">spaCy</span><span class="stack-pill">NER</span><span class="stack-pill">Geocoding</span>
+                </div>
+            </div>
+
+            <div class="proj-card p-8" data-domain="cv">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] font-mono py-1 px-3 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">96.8% accuracy</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Mapping</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">TSDR — Traffic Sign Detection</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">Production CV system for 100+ traffic sign categories from 1M+ street images. Reduced manual review by <strong class="text-slate-200">80%</strong>.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="stack-pill">TensorFlow</span><span class="stack-pill">Keras</span><span class="stack-pill">CNN</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 px-8 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-70 hover:opacity-100 transition-opacity gap-8">
+        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">© 2026 ITNESH KUMAR</span>
+        
+        <div class="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest">
+            <a href="tel:+91XXXXXXXXXX" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📞</span>
+                <span>Call</span>
+            </a>
+
+            <a href="https://linkedin.com/in/itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://x.com/kumaritnesh" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Twitter</span>
+            </a>
+
+            <a href="mailto:itneshkumar@gmail.com" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📧</span>
+                <span>Email</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Filter logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.proj-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.domain === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — Itnesh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        
+        /* Navigation Style */
+        .nav-card {
+            background-color: rgba(15, 23, 42, 0.8);
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+        .nav-link:hover { color: #2dd4bf; }
+
+        /* Publication Cards */
+        .pub-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+        }
+        .pub-card:hover {
+            border-color: #0d9488;
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateX(6px);
+        }
+
+        /* Interactive Tech Chips */
+        .pub-chip {
+            font-family: monospace;
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #0f172a;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+        .pub-card:hover .pub-chip {
+            border-color: #475569;
+            color: #cbd5e1;
+        }
+        .pub-chip:hover {
+            background: #0d9488 !important;
+            border-color: #2dd4bf !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        /* Topic Cards */
+        .topic-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .topic-card:hover {
+            border-color: #334155;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        /* Call to Action Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="max-w-6xl mx-auto px-8 pt-8">
+        <nav class="nav-card flex justify-between items-center px-8 py-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <span class="text-xl">👤</span>
+                    <span class="text-sm font-mono text-slate-400">About</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium">
+                <a href="work.html" class="nav-link"><span>💼</span> Work</a>
+                <a href="projects.html" class="nav-link"><span>🚀</span> Projects</a>
+                <a href="publications.html" class="nav-link text-teal-400"><span>📄</span> Publications</a>
+                <a href="education.html" class="nav-link"><span>🎓</span> Education</a>
+                <a href="hobbies.html" class="nav-link"><span>🎯</span> Hobbies</a>
+                <a href="contact.html" class="nav-link"><span>📧</span> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-8 mt-20 mb-24">
+        
+        <div class="mb-16">
+            <h2 class="text-xs font-mono text-teal-500 uppercase tracking-[0.3em] mb-4">Writing & Research</h2>
+            <h1 class="text-5xl font-bold mb-6">Publications <span class="text-slate-500 italic font-light">& Articles</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl">Sharing insights from building production AI systems—from multi-agent orchestration to large-scale NLP.</p>
+        </div>
+
+        <div class="space-y-6 mb-20">
+            <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-6">Articles & Papers</h3>
+
+            <div class="pub-card p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-20 flex-shrink-0">
+                    <span class="block text-teal-500 font-mono text-lg font-bold">2024</span>
+                    <span class="block text-[10px] text-slate-500 uppercase tracking-tighter mt-1">Article</span>
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-xl font-bold text-white mb-2 leading-tight">Agentic RAG with MCP: A Framework for Multi-Agent Enterprise Intelligence</h4>
+                    <p class="text-slate-500 italic text-sm mb-4">Medium · Towards Data Science</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">A deep dive into building production-grade agentic RAG systems using the Model Context Protocol. Covers orchestration patterns and evaluation strategies with RAGAS.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="pub-chip">RAG</span><span class="pub-chip">LangGraph</span><span class="pub-chip">MCP Protocol</span><span class="pub-chip">Multi-Agent</span>
+                    </div>
+                    <a href="https://medium.com" target="_blank" class="text-xs font-mono text-teal-400 hover:text-teal-300 transition-colors inline-flex items-center gap-2">
+                        READ ON MEDIUM <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-card p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-20 flex-shrink-0">
+                    <span class="block text-teal-500 font-mono text-lg font-bold">2023</span>
+                    <span class="block text-[10px] text-slate-500 uppercase tracking-tighter mt-1">Article</span>
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-xl font-bold text-white mb-2 leading-tight">Reducing Hallucinations in LLM Applications: Hybrid Retrieval Strategies</h4>
+                    <p class="text-slate-500 italic text-sm mb-4">Medium · AI Engineering</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Practical techniques for reducing hallucination rates in production—covering dense + sparse retrieval and re-ranking strategies.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="pub-chip">LLM</span><span class="pub-chip">Hallucination</span><span class="pub-chip">RAGAS</span><span class="pub-chip">DeepEval</span>
+                    </div>
+                    <a href="https://medium.com" target="_blank" class="text-xs font-mono text-teal-400 hover:text-teal-300 transition-colors inline-flex items-center gap-2">
+                        READ ON MEDIUM <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-card p-8 flex flex-col md:flex-row gap-8">
+                <div class="md:w-20 flex-shrink-0">
+                    <span class="block text-teal-500 font-mono text-lg font-bold">2022</span>
+                    <span class="block text-[10px] text-slate-500 uppercase tracking-tighter mt-1">Paper</span>
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-xl font-bold text-white mb-2 leading-tight">NER at Scale: Training spaCy Models on Indian Address Datasets</h4>
+                    <p class="text-slate-500 italic text-sm mb-4">NLP India Summit · Conference Paper</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Methodology for training domain-specific NER models on 500K+ Indian address records, achieving 95%+ geocoding match rates.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="pub-chip">spaCy</span><span class="pub-chip">NER</span><span class="pub-chip">Indian NLP</span><span class="pub-chip">Production ML</span>
+                    </div>
+                    <a href="#" class="text-xs font-mono text-teal-400 hover:text-teal-300 transition-colors inline-flex items-center gap-2">
+                        VIEW PAPER <span>↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box p-10 flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
+            <div class="text-center md:text-left">
+                <h4 class="text-2xl font-bold mb-2">Follow on Medium</h4>
+                <p class="text-slate-400 text-sm">I write regularly about GenAI architecture, RAG systems, and MLOps. New articles every few weeks.</p>
+            </div>
+            <a href="https://medium.com/@itneshkumar" target="_blank" class="bg-teal-500 hover:bg-teal-400 text-white font-mono text-xs font-bold py-4 px-8 rounded-lg transition-all transform hover:-translate-y-1">
+                FOLLOW @ITNESHKUMAR
+            </a>
+        </div>
+
+        <div class="mb-12">
+            <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Topics I Write About</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">🤖</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Multi-Agent Systems</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">LangGraph, CrewAI, and AutoGen patterns.</p>
+                </div>
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">📚</span>
+                    <h5 class="text-sm font-bold text-white mb-1">RAG Architecture</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Hybrid retrieval and evaluation at scale.</p>
+                </div>
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">🧠</span>
+                    <h5 class="text-sm font-bold text-white mb-1">LLM Engineering</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Prompting, fine-tuning, and grounding.</p>
+                </div>
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">📊</span>
+                    <h5 class="text-sm font-bold text-white mb-1">MLOps</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Lifecycle, monitoring, and pipelines.</p>
+                </div>
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">📝</span>
+                    <h5 class="text-sm font-bold text-white mb-1">NLP in Production</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">spaCy NER and Indian language NLP.</p>
+                </div>
+                <div class="topic-card p-6">
+                    <span class="text-2xl block mb-3">🎨</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Computer Vision</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">YOLO, LayoutLM, and document Intel.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 px-8 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-70 hover:opacity-100 transition-opacity gap-8">
+        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">© 2026 ITNESH KUMAR</span>
+        
+        <div class="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest">
+            <a href="https://linkedin.com/in/itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://x.com/kumaritnesh" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Twitter</span>
+            </a>
+
+            <a href="https://medium.com/@itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">✍️</span>
+                <span>Medium</span>
+            </a>
+
+            <a href="mailto:itneshkumar@gmail.com" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📧</span>
+                <span>Email</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education — Itnesh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        
+        /* Navigation Style */
+        .nav-card {
+            background-color: rgba(15, 23, 42, 0.8);
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+        .nav-link:hover { color: #2dd4bf; }
+
+        /* Education & Cert Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+        }
+        .glass-card:hover {
+            border-color: #0d9488;
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+        }
+
+        /* Tech/Skill Chips */
+        .edu-chip {
+            font-family: monospace;
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: #0f172a;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+        .glass-card:hover .edu-chip {
+            border-color: #475569;
+            color: #cbd5e1;
+        }
+        .edu-chip:hover {
+            background: #0d9488 !important;
+            border-color: #2dd4bf !important;
+            color: white !important;
+        }
+
+        /* Topic Icons */
+        .learning-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .learning-card:hover {
+            border-color: #334155;
+            background: rgba(30, 41, 59, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="max-w-6xl mx-auto px-8 pt-8">
+        <nav class="nav-card flex justify-between items-center px-8 py-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <span class="text-xl">👤</span>
+                    <span class="text-sm font-mono text-slate-400">About</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium">
+                <a href="work.html" class="nav-link"><span>💼</span> Work</a>
+                <a href="projects.html" class="nav-link"><span>🚀</span> Projects</a>
+                <a href="publications.html" class="nav-link"><span>📄</span> Publications</a>
+                <a href="education.html" class="nav-link text-teal-400"><span>🎓</span> Education</a>
+                <a href="hobbies.html" class="nav-link"><span>🎯</span> Hobbies</a>
+                <a href="contact.html" class="nav-link"><span>📧</span> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-8 mt-20 mb-24">
+        
+        <div class="mb-16">
+            <h2 class="text-xs font-mono text-teal-500 uppercase tracking-[0.3em] mb-4">Academic & Professional</h2>
+            <h1 class="text-5xl font-bold mb-6">Education <span class="text-slate-500 italic font-light">& Learning</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl">A foundation in Computer Science combined with a continuous commitment to the evolving AI landscape.</p>
+        </div>
+
+        <div class="mb-20">
+            <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Academic Background</h3>
+            
+            <div class="glass-card p-8 flex flex-col md:flex-row gap-8">
+                <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/20 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                    🎓
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">B.Tech in Computer Science & Engineering</h4>
+                            <p class="text-slate-400">University Institute of Technology</p>
+                        </div>
+                        <span class="text-sm font-mono text-teal-500 bg-teal-500/5 px-3 py-1 rounded-full border border-teal-500/10">2014 — 2018</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Core curriculum in algorithms, data structures, and machine learning. Final year project focused on 
+                        <span class="text-slate-200">image segmentation for autonomous navigation</span>, which sparked my specialized interest in Computer Vision.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="edu-chip">Algorithms</span>
+                        <span class="edu-chip">Linear Algebra</span>
+                        <span class="edu-chip">Probability</span>
+                        <span class="edu-chip">Computer Vision</span>
+                        <span class="edu-chip">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Professional Certifications</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">🧠</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">LangChain for LLM Apps</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">DeepLearning.AI · 2024</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">☁️</div>
+                    
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">AWS Certified Machine Learning</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">Amazon Web Services · 2023</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">🔷</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">Azure AI Engineer Associate (AI-102)</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">Microsoft Azure. 2023</p>
+                    </div>
+                </div>
+
+
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">📊</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">MLflow: Lifecycle Management</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">Databricks Academy · 2022</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">🎯</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">Natural Language Processing Specialization</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">Coursera · DeepLearning.AI · 2021</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 flex items-center gap-6">
+                    <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-xl">🤖</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">Deep Learning Specialization</h5>
+                        <p class="text-[11px] text-slate-500 uppercase mt-1">DeepLearning.AI · 2020</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Continuous Learning</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">📰</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Research Papers</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Weekly reading of arXiv papers on Agent reasoning and RAG.</p>
+                </div>
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">🎧</span>
+                    <h5 class="text-sm font-bold text-white mb-1">AI Podcasts</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Latent Space, TWIML, and The Gradient for industry trends.</p>
+                </div>
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">🛠️</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Side Projects</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Rapid PoCs with new frameworks before production adoption.</p>
+                </div>
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">✍️</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Technical Writing</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Synthesizing complex topics into Medium articles.</p>
+                </div>
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">🌐</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Community</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Active in LangChain and Indian AI/ML developer circles.</p>
+                </div>
+                <div class="learning-card p-6">
+                    <span class="text-2xl block mb-3">🔬</span>
+                    <h5 class="text-sm font-bold text-white mb-1">Experimentation</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Testing new models and retrieval strategies systematically.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 px-8 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-70 hover:opacity-100 transition-opacity gap-8">
+        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">© 2026 ITNESH KUMAR</span>
+        
+        <div class="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest">
+            <a href="https://linkedin.com/in/itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://x.com/kumaritnesh" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Twitter</span>
+            </a>
+
+            <a href="https://medium.com/@itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">✍️</span>
+                <span>Medium</span>
+            </a>
+
+            <a href="mailto:itneshkumar@gmail.com" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📧</span>
+                <span>Email</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

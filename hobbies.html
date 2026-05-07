@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies — Itnesh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        
+        /* Navigation Style */
+        .nav-card {
+            background-color: rgba(15, 23, 42, 0.8);
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+        .nav-link:hover { color: #2dd4bf; }
+
+        /* Hobby Hero Style */
+        .hobby-hero {
+            background: rgba(30, 41, 59, 0.3);
+            border-left: 4px solid #0d9488;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem;
+            font-style: italic;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        /* Hobby Cards */
+        .hobby-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hobby-card:hover {
+            border-color: #0d9488;
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateY(-4px);
+        }
+        .hobby-card-bg {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 80px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        /* Interest Cards */
+        .interest-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .interest-card:hover {
+            border-color: #334155;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        /* Currently Cards */
+        .status-card {
+            background: rgba(30, 41, 59, 0.2);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+        .status-card:hover {
+            border-color: #0d9488;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="max-w-6xl mx-auto px-8 pt-8">
+        <nav class="nav-card flex justify-between items-center px-8 py-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <span class="text-xl">👤</span>
+                    <span class="text-sm font-mono text-slate-400">About</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium">
+                <a href="work.html" class="nav-link"><span>💼</span> Work</a>
+                <a href="projects.html" class="nav-link"><span>🚀</span> Projects</a>
+                <a href="publications.html" class="nav-link"><span>📄</span> Publications</a>
+                <a href="education.html" class="nav-link"><span>🎓</span> Education</a>
+                <a href="hobbies.html" class="nav-link text-teal-400"><span>🎯</span> Hobbies</a>
+                <a href="contact.html" class="nav-link"><span>📧</span> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-8 mt-20 mb-24">
+        
+        <div class="mb-16">
+            <h2 class="text-xs font-mono text-teal-500 uppercase tracking-[0.3em] mb-4">Life Outside the Terminal</h2>
+            <h1 class="text-5xl font-bold mb-6">Hobbies & <span class="text-slate-500 italic font-light">Interests</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl">The things I do when I'm not building AI systems — which tend to feed back into how I think about building AI systems.</p>
+        </div>
+
+        <div class="hobby-hero mb-20 text-lg">
+            "Good engineers are curious about everything. The patterns you pick up playing chess, the patience you build on a Himalayan trek, the humility you find in a 0.5% F1 improvement — they're all the same thing."
+        </div>
+
+        <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">What I Do</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+
+            <div class="hobby-card p-8">
+                <div class="hobby-card-bg">📚</div>
+                <span class="text-3xl block mb-4">📚</span>
+                <h3 class="text-xl font-bold text-white mb-3">Technical Writing</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Writing on Medium about GenAI, RAG systems, MLOps, and production ML. I believe in learning in public — writing forces you to actually understand what you've built, not just that it works. Most of my articles come from real problems I've hit and solved at work.</p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Follow on Medium →</span>
+            </div>
+
+            <div class="hobby-card p-8">
+                <div class="hobby-card-bg">♟️</div>
+                <span class="text-3xl block mb-4">♟️</span>
+                <h3 class="text-xl font-bold text-white mb-3">Chess</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Active on Chess.com and Lichess. Chess taught me that the best move is rarely obvious, that planning several steps ahead matters, and that overconfidence loses games. I see strong parallels with designing multi-agent systems where each agent needs to reason about other agents' future states.</p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Active on Chess.com</span>
+            </div>
+
+            <div class="hobby-card p-8">
+                <div class="hobby-card-bg">🏔️</div>
+                <span class="text-3xl block mb-4">🏔️</span>
+                <h3 class="text-xl font-bold text-white mb-3">Trekking</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">The Himalayas are an hour from Delhi and among the most humbling places on Earth. I try to get into the mountains whenever I can — Kedarkantha, Triund, Chopta. Trekking resets my problem-solving mode; the best ideas for system architecture often arrive at altitude.</p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Kedarkantha · Triund · Chopta</span>
+            </div>
+
+            <div class="hobby-card p-8">
+                <div class="hobby-card-bg"> Ramen</div>
+                <span class="text-3xl block mb-4">🍜</span>
+                <h3 class="text-xl font-bold text-white mb-3">Food Exploration</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Delhi has an embarrassingly good street food culture and I have made it my personal responsibility to document it empirically. Chandni Chowk parathas, Nizamuddin kebabs, Old Delhi chaat — each neighbourhood is a completely different cuisine. Still collecting data.</p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Chandni Chowk · Nizamuddin · Lajpat Nagar</span>
+            </div>
+
+        </div>
+
+        <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Other Interests</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-20">
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">🎧</span>
+                <h5 class="text-sm font-bold text-white mb-1">AI Podcasts</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Lex Fridman, Latent Space, TWIML — weekly listening.</p>
+            </div>
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">🛠️</span>
+                <h5 class="text-sm font-bold text-white mb-1">Open Source</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Contributing to LLM tooling and NLP utilities.</p>
+            </div>
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">📰</span>
+                <h5 class="text-sm font-bold text-white mb-1">Research Reading</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Weekly arXiv digest — LLM reasoning, evals, agents.</p>
+            </div>
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">🎮</span>
+                <h5 class="text-sm font-bold text-white mb-1">Strategy Games</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Civilisation, Into the Breach — long-horizon thinking.</p>
+            </div>
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">📷</span>
+                <h5 class="text-sm font-bold text-white mb-1">Street Photography</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Delhi's Old City is an infinite subject. Visual analysis.</p>
+            </div>
+            <div class="interest-card p-6 text-center">
+                <span class="text-2xl block mb-3">🌿</span>
+                <h5 class="text-sm font-bold text-white mb-1">Nature Walks</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">Local birding and park walks. Thinking time.</p>
+            </div>
+        </div>
+
+        <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Currently</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Reading</div>
+                <div class="text-sm font-bold text-white leading-tight">The Alignment Problem</div>
+                <div class="text-xs text-slate-500 mt-1">Brian Christian</div>
+            </div>
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Listening to</div>
+                <div class="text-sm font-bold text-white leading-tight">Latent Space Podcast</div>
+                <div class="text-xs text-slate-500 mt-1">Latest episode on evals</div>
+            </div>
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Building</div>
+                <div class="text-sm font-bold text-white leading-tight">Personal RAG system</div>
+                <div class="text-xs text-slate-500 mt-1">Over my notes & articles</div>
+            </div>
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Playing</div>
+                <div class="text-sm font-bold text-white leading-tight">Chess · 1450 rapid</div>
+                <div class="text-xs text-slate-500 mt-1">Chess.com</div>
+            </div>
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Next trek</div>
+                <div class="text-sm font-bold text-white leading-tight">Roopkund, Uttarakhand</div>
+                <div class="text-xs text-slate-500 mt-1">Planning for 2026</div>
+            </div>
+            <div class="status-card">
+                <div class="text-[10px] font-mono text-teal-500 uppercase tracking-tighter mb-1">Writing about</div>
+                <div class="text-sm font-bold text-white leading-tight">LangGraph + MCP</div>
+                <div class="text-xs text-slate-500 mt-1">Production patterns</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 px-8 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-70 hover:opacity-100 transition-opacity gap-8">
+        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">© 2026 ITNESH KUMAR</span>
+        
+        <div class="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest">
+            <a href="https://linkedin.com/in/itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://x.com/kumaritnesh" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Twitter</span>
+            </a>
+
+            <a href="https://medium.com/@itneshkumar" target="_blank" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">✍️</span>
+                <span>Medium</span>
+            </a>
+
+            <a href="mailto:itneshkumar@gmail.com" class="flex items-center gap-2 hover:text-teal-400 transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📧</span>
+                <span>Email</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
