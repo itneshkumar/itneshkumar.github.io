@@ -149,17 +149,31 @@
                     </p>
 
                     <div class="grid grid-cols-3 gap-4">
-                        <div class="stat-card p-4 rounded-xl cursor-pointer">
+                        <!-- Linked Stat Card -->
+                        <a href="https://itnesh.com/work" class="stat-card p-4 rounded-xl block">
                             <div class="text-3xl font-bold">8+</div>
                             <div class="text-xs text-slate-500 uppercase tracking-wider">Years</div>
-                        </div>
-                        <div class="stat-card p-4 rounded-xl cursor-pointer">
+                        </a>
+                        
+                        <!-- Linked Stat Card -->
+                        <a href="https://itnesh.com/projects" class="stat-card p-4 rounded-xl block">
                             <div class="text-3xl font-bold">12+</div>
                             <div class="text-xs text-slate-500 uppercase tracking-wider">Projects</div>
-                        </div>
-                        <div class="stat-card p-4 rounded-xl cursor-pointer">
+                        </a>
+                        
+                        <!-- 3X Cloud Stat Card with Hover Reveal -->
+                        <div class="stat-card p-4 rounded-xl cursor-pointer group flex flex-col justify-between min-h-[92px]">
                             <div class="text-3xl font-bold">3X</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wider">Cloud</div>
+                            <div class="relative h-4 overflow-hidden">
+                                <!-- Default Text (Hides on hover) -->
+                                <div class="text-xs text-slate-500 uppercase tracking-wider transition-all duration-300 transform group-hover:-translate-y-5 group-hover:opacity-0 absolute inset-0">
+                                    Cloud
+                                </div>
+                                <!-- Hover Text (Reveals on hover) -->
+                                <div class="text-[10px] text-teal-400 font-mono uppercase tracking-tight transition-all duration-300 transform translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 absolute inset-0 whitespace-nowrap">
+                                    AWS • AZURE • GCP
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
