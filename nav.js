@@ -19,14 +19,14 @@ function getActivePage() {
 
 function renderNav(activePage) {
     const tabs = [
-        { id: 'work', icon: '💼', label: 'Work', href: 'work' },
-        { id: 'projects', icon: '🚀', label: 'Projects', href: 'projects' },
-        { id: 'skills', icon: '🧠', label: 'Skills', href: 'skills' },
-        { id: 'publications', icon: '📄', label: 'Publications', href: 'publications' },
-        { id: 'education', icon: '🎓', label: 'Education', href: 'education' },
-        { id: 'leadership', icon: '🤝', label: 'Leadership', href: 'leadership' },
-        { id: 'hobbies', icon: '🎯', label: 'Hobbies', href: 'hobbies' },
-        { id: 'contact', icon: '✉️', label: 'Contact', href: 'contact' },
+        { id: 'work', icon: '💼', label: 'Work', href: '/work/' },
+        { id: 'projects', icon: '🚀', label: 'Projects', href: '/projects/' },
+        { id: 'skills', icon: '🧠', label: 'Skills', href: '/skills/' },
+        { id: 'publications', icon: '📄', label: 'Publications', href: '/publications/' },
+        { id: 'education', icon: '🎓', label: 'Education', href: '/education/' },
+        { id: 'leadership', icon: '🤝', label: 'Leadership', href: '/leadership/' },
+        { id: 'hobbies', icon: '🎯', label: 'Hobbies', href: '/hobbies/' },
+        { id: 'contact', icon: '✉️', label: 'Contact', href: '/contact/' },
     ];
 
     const tabsHTML = tabs.map(t => `
