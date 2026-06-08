@@ -37,7 +37,7 @@ function renderNav(activePage) {
     return `
     <nav class="nav-card flex flex-col md:flex-row justify-between items-center px-8 py-4 gap-4">
         <div class="flex items-center space-x-3 w-full md:w-auto">
-            <a href="index.html" class="flex items-center space-x-2" aria-label="Home">
+            <a href="/" class="flex items-center space-x-2" aria-label="Home">
                 <span class="text-sm">👤</span>
                 <span class="text-sm font-mono text-slate-400 uppercase tracking-[0.2em]">IK</span>
             </a>
