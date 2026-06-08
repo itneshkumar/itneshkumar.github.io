@@ -19,14 +19,14 @@ function getActivePage() {
 
 function renderNav(activePage) {
     const tabs = [
-        { id: 'work', icon: '💼', label: 'Work', href: 'work' },
-        { id: 'projects', icon: '🚀', label: 'Projects', href: 'projects' },
+        { id: 'work', icon: '💼', label: 'Work', href: 'work.html' },
+        { id: 'projects', icon: '🚀', label: 'Projects', href: 'projects.html' },
         { id: 'skills', icon: '🧠', label: 'Skills', href: 'skills.html' },
-        { id: 'publications', icon: '📄', label: 'Publications', href: 'publications' },
-        { id: 'education', icon: '🎓', label: 'Education', href: 'education' },
-        { id: 'leadership', icon: '🤝', label: 'Leadership', href: 'leadership' },
-        { id: 'hobbies', icon: '🎯', label: 'Hobbies', href: 'hobbies' },
-        { id: 'contact', icon: '✉️', label: 'Contact', href: 'contact' },
+        { id: 'publications', icon: '📄', label: 'Publications', href: 'publications.html' },
+        { id: 'education', icon: '🎓', label: 'Education', href: 'education.html' },
+        { id: 'leadership', icon: '🤝', label: 'Leadership', href: 'leadership.html' },
+        { id: 'hobbies', icon: '🎯', label: 'Hobbies', href: 'hobbies.html' },
+        { id: 'contact', icon: '✉️', label: 'Contact', href: 'contact.html' },
     ];
 
     const tabsHTML = tabs.map(t => `
