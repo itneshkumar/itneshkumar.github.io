@@ -131,10 +131,43 @@ function initFilterButtons() {
     applyFilter(initial.dataset.filter || 'all');
 }
 
+function initWorkExperienceFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const experienceCards = document.querySelectorAll('.experience-card');
+    
+    if (!filterButtons.length || !experienceCards.length) return;
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            experienceCards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                
+                if (filterValue === 'all' || cardType === filterValue) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
 function initPage() {
     injectNav();
     injectFooter();
     initFilterButtons();
+    initWorkExperienceFilters();
 }
 
 if (document.readyState === 'loading') {

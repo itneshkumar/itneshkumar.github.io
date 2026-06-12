@@ -6,34 +6,6 @@
     <title>Work Experience — Itnesh Kumar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* Filter Navigation Buttons */
-        .filter-btn {
-            font-family: monospace;
-            font-size: 11px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #1e293b;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
-        .filter-btn.active { 
-            background: #0d9488; 
-            color: white; 
-            border-color: #2dd4bf;
-            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
-        }
-
-        /* Smooth card rendering transitions during filtering */
-        .experience-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-    </style>
 </head>
 <body class="font-sans antialiased">
 
@@ -169,40 +141,5 @@
     <div id="footer-root"></div>
 
     <script src="../nav.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const experienceCards = document.querySelectorAll('.experience-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Update active button state
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // Filter logic matching the selected data category
-                    const filterValue = button.getAttribute('data-filter');
-
-                    experienceCards.forEach(card => {
-                        const cardType = card.getAttribute('data-type');
-                        
-                        if (filterValue === 'all' || cardType === filterValue) {
-                            card.style.display = 'block';
-                            // Short delay to match clean visual entry transitions
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(10px)';
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
