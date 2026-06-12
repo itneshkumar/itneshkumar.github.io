@@ -6,6 +6,34 @@
     <title>Work Experience — Itnesh Kumar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Filter Navigation Buttons */
+        .filter-btn {
+            font-family: monospace;
+            font-size: 11px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
+        .filter-btn.active { 
+            background: #0d9488; 
+            color: white; 
+            border-color: #2dd4bf;
+            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+        }
+
+        /* Smooth card rendering transitions during filtering */
+        .experience-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 </head>
 <body class="font-sans antialiased">
 
@@ -40,9 +68,15 @@
             </div>
         </div>
 
-        <div class="space-y-12 relative border-l border-slate-800 ml-4 pl-8">
+        <div class="flex flex-wrap gap-3 mb-12">
+            <button class="filter-btn active" data-filter="all">All Companies</button>
+            <button class="filter-btn" data-filter="product">Product Based</button>
+            <button class="filter-btn" data-filter="consulting">Consulting</button>
+        </div>
+
+        <div id="experience-container" class="space-y-12 relative border-l border-slate-800 ml-4 pl-8">
             
-            <div class="experience-card p-8 relative">
+            <div class="experience-card p-8 relative" data-type="consulting">
                 <div class="absolute -left-[2.35rem] top-10 w-3 h-3 rounded-full bg-teal-500 dot-indicator"></div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                     <div>
@@ -67,7 +101,7 @@
                 </div>
             </div>
 
-            <div class="experience-card p-8 relative">
+            <div class="experience-card p-8 relative" data-type="consulting">
                 <div class="absolute -left-[2.35rem] top-10 w-3 h-3 rounded-full bg-slate-700"></div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                     <div>
@@ -88,12 +122,12 @@
                 </div>
             </div>
 
-            <div class="experience-card p-8 relative">
+            <div class="experience-card p-8 relative" data-type="product">
                 <div class="absolute -left-[2.35rem] top-10 w-3 h-3 rounded-full bg-slate-700"></div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                     <div>
                         <h3 class="text-2xl font-bold text-white">NLP Engineer</h3>
-                        <p class="text-slate-400 font-medium">Acidaes Solutions (CRMNEXT) · <span class="text-slate-500 font-normal">FinTech CRM</span></p>
+                        <p class="text-slate-400 font-medium">Acidaes Solutions (BUSINESSNEXT) · <span class="text-slate-500 font-normal">FinTech CRM</span></p>
                     </div>
                     <p class="text-sm font-mono text-slate-500 mt-2 md:mt-0">Dec 2022 — Aug 2024</p>
                 </div>
@@ -109,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="experience-card p-8 relative">
+            <div class="experience-card p-8 relative" data-type="product">
                 <div class="absolute -left-[2.35rem] top-10 w-3 h-3 rounded-full bg-slate-700"></div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                     <div>
@@ -135,5 +169,40 @@
     <div id="footer-root"></div>
 
     <script src="../nav.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const experienceCards = document.querySelectorAll('.experience-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Filter logic matching the selected data category
+                    const filterValue = button.getAttribute('data-filter');
+
+                    experienceCards.forEach(card => {
+                        const cardType = card.getAttribute('data-type');
+                        
+                        if (filterValue === 'all' || cardType === filterValue) {
+                            card.style.display = 'block';
+                            // Short delay to match clean visual entry transitions
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(10px)';
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
