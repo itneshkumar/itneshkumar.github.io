@@ -25,10 +25,18 @@
             "Good engineers are curious about everything. The patterns you pick up playing chess, the patience you build on a Himalayan trek, the humility you find in a 0.5% F1 improvement — they're all the same thing."
         </div>
 
-        <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">What I Do</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="flex flex-wrap gap-3 mb-12">
+            <button class="filter-btn active" data-filter="all">All Interests</button>
+            <button class="filter-btn" data-filter="intellectual">Intellectual & Strategy</button>
+            <button class="filter-btn" data-filter="creative">Creative & Culture</button>
+            <button class="filter-btn" data-filter="physical">Physical & Exploration</button>
+        </div>
 
-            <div class="hobby-card p-8">
+        <h3 id="main-section-title" class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">What I Do</h3>
+        
+        <div id="hobbies-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+            <div class="hobby-card p-8" data-category="intellectual">
                 <div class="hobby-card-bg">📚</div>
                 <span class="text-3xl block mb-4">📚</span>
                 <h3 class="text-xl font-bold text-white mb-3">Technical Writing</h3>
@@ -36,7 +44,7 @@
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Follow on Medium →</span>
             </div>
 
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="intellectual">
                 <div class="hobby-card-bg">📖</div>
                 <span class="text-3xl block mb-4">🧘‍♂️</span>
                 <h3 class="text-xl font-bold text-white mb-3">Mindset & Stoicism</h3>
@@ -46,7 +54,7 @@
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Philosophy & Focus</span>
             </div>
             
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="intellectual">
                 <div class="hobby-card-bg">🚀</div>
                 <span class="text-3xl block mb-4">🚀</span>
                 <h3 class="text-xl font-bold text-white mb-3">Strategy & Innovation</h3>
@@ -55,8 +63,48 @@
                 </p>
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Startup & Tech Strategy</span>
             </div>
+
+            <div class="hobby-card p-8" data-category="creative">
+                <div class="hobby-card-bg">🎨</div>
+                <span class="text-3xl block mb-4">🎨</span>
+                <h3 class="text-xl font-bold text-white mb-3">Painting & Fine Arts</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Working with canvas and color palettes is where visual spatial awareness meets pure intuition. Translating abstract human feelings or detailed landscapes into cohesive strokes mimics the complex mapping found in computer vision architectures. It’s an exercise in balancing micro-details with a macro vision.
+                </p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Canvas · Color Theory · Visual Mapping</span>
+            </div>
+
+            <div class="hobby-card p-8" data-category="creative">
+                <div class="hobby-card-bg">🌸</div>
+                <span class="text-3xl block mb-4">🌸</span>
+                <h3 class="text-xl font-bold text-white mb-3">Thread Flower Making</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    A highly detailed craft requiring meticulous structural assembly and geometric precision. Handcrafting flowers from individual gradients of thread demands patience and exact spatial design. This deliberate layer-by-layer optimization mirrors building clean, iterative neural pipelines where structural integrity determines the absolute output.
+                </p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Precision Craft · Layered Design</span>
+            </div>
+
+            <div class="hobby-card p-8" data-category="creative">
+                <div class="hobby-card-bg">🗿</div>
+                <span class="text-3xl block mb-4">🗿</span>
+                <h3 class="text-xl font-bold text-white mb-3">African God Tribal Art</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Exploring cultural anthropology and high-contrast expressions through tribal art and representation of traditional African deities. This form of design relies heavily on geometric minimalism, deep mythology, and distinct iconography—providing a fascinating structural viewpoint on how symbolism and raw information condense into human interfaces.
+                </p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Cultural Iconography · Geometry</span>
+            </div>
+
+            <div class="hobby-card p-8" data-category="creative">
+                <div class="hobby-card-bg">🌳</div>
+                <span class="text-3xl block mb-4">🌳</span>
+                <h3 class="text-xl font-bold text-white mb-3">Thread Tree Sculptures</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Constructing 3D miniature trees out of intricate twisted wire and structured thread. This hobby demands a deep physical comprehension of recursive fractals and branching logic. Manipulating individual thread systems into stable, complex canopy systems mirrors the exact logic used when designing autonomous multi-agent graph routes.
+                </p>
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Fractal Geometry · Branching Logic</span>
+            </div>
             
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="intellectual">
                 <div class="hobby-card-bg">🤝</div>
                 <span class="text-3xl block mb-4">🤝</span>
                 <h3 class="text-xl font-bold text-white mb-3">Influence & Social Engineering</h3>
@@ -66,7 +114,7 @@
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Leadership & Networking</span>
             </div>
             
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="intellectual">
                 <div class="hobby-card-bg">📈</div>
                 <span class="text-3xl block mb-4">📈</span>
                 <h3 class="text-xl font-bold text-white mb-3">Economics & Optimization</h3>
@@ -75,7 +123,8 @@
                 </p>
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Wealth & Productivity</span>
             </div>
-            <div class="hobby-card p-8">
+
+            <div class="hobby-card p-8" data-category="creative">
                 <div class="hobby-card-bg">🎸</div>
                 <span class="text-3xl block mb-4">🎸</span>
                 <h3 class="text-xl font-bold text-white mb-3">Acoustic Guitar</h3>
@@ -84,7 +133,8 @@
                 </p>
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Acoustic · Pattern Recognition · Theory</span>
             </div>
-            <div class="hobby-card p-8">
+
+            <div class="hobby-card p-8" data-category="physical">
                 <div class="hobby-card-bg">🏸</div>
                 <span class="text-3xl block mb-4">🏸</span>
                 <h3 class="text-xl font-bold text-white mb-3">Badminton</h3>
@@ -94,7 +144,7 @@
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Agility & Precision</span>
             </div>
             
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="physical">
                 <div class="hobby-card-bg">🎯</div>
                 <span class="text-3xl block mb-4">🎯</span>
                 <h3 class="text-xl font-bold text-white mb-3">Carrom</h3>
@@ -104,7 +154,7 @@
                 <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Tactical Geometry</span>
             </div>
 
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="physical">
                 <div class="hobby-card-bg">🏔️</div>
                 <span class="text-3xl block mb-4">🏔️</span>
                 <h3 class="text-xl font-bold text-white mb-3">Trekking & Exploration</h3>
@@ -116,7 +166,7 @@
                 </span>
             </div>
 
-            <div class="hobby-card p-8">
+            <div class="hobby-card p-8" data-category="creative">
                 <div class="hobby-card-bg"> Ramen</div>
                 <span class="text-3xl block mb-4">🍜</span>
                 <h3 class="text-xl font-bold text-white mb-3">Food Exploration</h3>
@@ -126,34 +176,35 @@
 
         </div>
 
-        <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Other Interests</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-            <div class="interest-card p-6 text-center">
+        <h3 id="secondary-section-title" class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-8">Other Interests</h3>
+        
+        <div id="interests-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            <div class="interest-card p-6 text-center" data-category="intellectual">
                 <span class="text-2xl block mb-3">🎧</span>
                 <h5 class="text-sm font-bold text-white mb-1">AI Podcasts</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Lex Fridman, Latent Space, TWIML — weekly listening.</p>
             </div>
-            <div class="interest-card p-6 text-center">
+            <div class="interest-card p-6 text-center" data-category="intellectual">
                 <span class="text-2xl block mb-3">🛠️</span>
                 <h5 class="text-sm font-bold text-white mb-1">Open Source</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Contributing to LLM tooling and NLP utilities.</p>
             </div>
-            <div class="interest-card p-6 text-center">
+            <div class="interest-card p-6 text-center" data-category="intellectual">
                 <span class="text-2xl block mb-3">📰</span>
                 <h5 class="text-sm font-bold text-white mb-1">Research Reading</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Weekly arXiv digest — LLM reasoning, evals, agents.</p>
             </div>
-            <div class="interest-card p-6 text-center">
+            <div class="interest-card p-6 text-center" data-category="intellectual">
                 <span class="text-2xl block mb-3">🎮</span>
                 <h5 class="text-sm font-bold text-white mb-1">Strategy Games</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Civilisation, Into the Breach — long-horizon thinking.</p>
             </div>
-            <div class="interest-card p-6 text-center">
+            <div class="interest-card p-6 text-center" data-category="creative">
                 <span class="text-2xl block mb-3">📷</span>
                 <h5 class="text-sm font-bold text-white mb-1">Street Photography</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Delhi's Old City is an infinite subject. Visual analysis.</p>
             </div>
-            <div class="interest-card p-6 text-center">
+            <div class="interest-card p-6 text-center" data-category="physical">
                 <span class="text-2xl block mb-3">🌿</span>
                 <h5 class="text-sm font-bold text-white mb-1">Nature Walks</h5>
                 <p class="text-xs text-slate-500 leading-relaxed">Local birding and park walks. Thinking time.</p>
