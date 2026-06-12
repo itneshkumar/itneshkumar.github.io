@@ -163,11 +163,69 @@ function initWorkExperienceFilters() {
     });
 }
 
+function initHobbiesFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const hobbyCards = document.querySelectorAll('.hobby-card');
+    const interestCards = document.querySelectorAll('.interest-card');
+    const mainSectionTitle = document.getElementById('main-section-title');
+    const secondarySectionTitle = document.getElementById('secondary-section-title');
+
+    if (!filterButtons.length || (!hobbyCards.length && !interestCards.length)) return;
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            let visibleHobbies = 0;
+            let visibleInterests = 0;
+
+            hobbyCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    visibleHobbies++;
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    card.style.display = 'none';
+                }
+            });
+
+            interestCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    visibleInterests++;
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    card.style.display = 'none';
+                }
+            });
+
+            if (mainSectionTitle) mainSectionTitle.style.display = visibleHobbies > 0 ? 'block' : 'none';
+            if (secondarySectionTitle) secondarySectionTitle.style.display = visibleInterests > 0 ? 'block' : 'none';
+        });
+    });
+}
+
 function initPage() {
     injectNav();
     injectFooter();
     initFilterButtons();
     initWorkExperienceFilters();
+    initHobbiesFilters();
 }
 
 if (document.readyState === 'loading') {
