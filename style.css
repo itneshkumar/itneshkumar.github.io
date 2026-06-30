@@ -214,6 +214,15 @@ body { background-color: #0f172a; color: #f8fafc; }
 }
 .status-card:hover { border-color: #0d9488; }
 
+/* Domain / category accent colors — top gradient line on proj-card */
+.proj-card[data-domain="cv"]::before    { background: linear-gradient(90deg, #7c3aed, transparent); }
+.proj-card[data-domain="nlp"]::before   { background: linear-gradient(90deg, #2563eb, transparent); }
+.proj-card[data-domain="mlops"]::before { background: linear-gradient(90deg, #d97706, transparent); }
+.proj-card[data-domain="coreml"]::before   { background: linear-gradient(90deg, #7c3aed, transparent); }
+.proj-card[data-domain="dataeng"]::before  { background: linear-gradient(90deg, #0284c7, transparent); }
+.proj-card[data-domain="mentorship"]::before { background: linear-gradient(90deg, #7c3aed, transparent); }
+.proj-card[data-domain="oratory"]::before   { background: linear-gradient(90deg, #f59e0b, transparent); }
+
 /* Projects & Skills Page */
 .proj-card {
     background: rgba(30, 41, 59, 0.4);
@@ -419,6 +428,26 @@ main { animation: page-fade-in 0.45s ease both; }
     50% { opacity: 0; }
 }
 .typewriter-cursor { animation: cursor-blink 0.75s ease infinite; }
+
+/* FAQ Accordion */
+.faq-content { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+.faq-item.open .faq-content { max-height: 200px; }
+.faq-toggle { transition: transform 0.3s ease; }
+.faq-item.open .faq-toggle { transform: rotate(180deg); }
+.faq-item { cursor: pointer; }
+
+/* Mobile nav right-edge fade */
+.nav-tabs-wrapper { position: relative; }
+@media (max-width: 767px) {
+    .nav-tabs-wrapper::after {
+        content: '';
+        position: absolute; right: 0; top: 0; bottom: 0;
+        width: 48px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.95));
+        pointer-events: none;
+        border-radius: 0 8px 8px 0;
+    }
+}
 
 /* CTA Buttons (Homepage hero) */
 .cta-btn-primary {

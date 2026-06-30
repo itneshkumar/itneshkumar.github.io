@@ -42,7 +42,9 @@ function renderNav(activePage) {
                 <span class="text-sm font-mono text-slate-400 uppercase tracking-[0.2em]">IK</span>
             </a>
         </div>
-        <div class="flex overflow-x-auto no-scrollbar w-full md:w-auto justify-start md:justify-end space-x-6 text-sm font-medium pb-2 md:pb-0">${tabsHTML}
+        <div class="nav-tabs-wrapper w-full md:w-auto">
+            <div class="flex overflow-x-auto no-scrollbar justify-start md:justify-end space-x-6 text-sm font-medium pb-2 md:pb-0">${tabsHTML}
+            </div>
         </div>
     </nav>`;
 }
@@ -299,12 +301,46 @@ function initEnhancements() {
     }
 }
 
+function initFaqAccordion() {
+    const items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+        const question = item.querySelector('h4');
+        const answer = item.querySelector('p');
+        if (!question || !answer) return;
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between';
+        question.parentNode.insertBefore(header, question);
+        header.appendChild(question);
+
+        const chevron = document.createElement('span');
+        chevron.className = 'faq-toggle text-slate-500 flex-shrink-0 ml-4';
+        chevron.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>';
+        header.appendChild(chevron);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'faq-content';
+        answer.parentNode.insertBefore(wrapper, answer);
+        wrapper.appendChild(answer);
+        answer.style.paddingTop = '0.75rem';
+
+        header.addEventListener('click', () => {
+            const opening = !item.classList.contains('open');
+            items.forEach(i => i.classList.remove('open'));
+            if (opening) item.classList.add('open');
+        });
+    });
+}
+
 function initPage() {
     injectNav();
     injectFooter();
     initFilterButtons();
     initWorkExperienceFilters();
     initHobbiesFilters();
+    initFaqAccordion();
     initEnhancements();
 }
 
