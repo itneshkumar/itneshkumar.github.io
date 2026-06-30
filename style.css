@@ -1,806 +1,409 @@
-/* Consolidated stylesheet for all pages */
+/* Consolidated stylesheet — single definitions, no duplication */
 
+/* Base */
 body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid rgba(255,255,255,0.12);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-        .nav-link.active { color: #0d9488; }
 
-        /* Channel cards */
-        .channel-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-        }
-        .channel-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.6);
-            transform: translateY(-4px);
-        }
+/* Scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Availability Banner */
-        .avail-banner {
-            background: rgba(13, 148, 136, 0.1);
-            border: 1px solid rgba(13, 148, 136, 0.3);
-            border-radius: 16px;
-        }
+/* Animations */
+@keyframes blink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+}
+.dot-blink { animation: blink 2.2s ease infinite; }
 
-        /* Open To Cards */
-        .opento-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .opento-card:hover {
-            border-color: #334155;
-            background: rgba(30, 41, 59, 0.5);
-        }
+/* Navigation */
+.nav-card {
+    background-color: rgba(15, 23, 42, 0.8);
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+    background-size: 24px 24px;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+}
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+.nav-link:hover { color: #2dd4bf; }
+.nav-link.active { color: #0d9488; }
 
-        /* FAQ Item */
-        .faq-item {
-            background: rgba(30, 41, 59, 0.2);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .faq-item:hover {
-            background: rgba(30, 41, 59, 0.4);
-            border-color: #334155;
-        }
+/* Contact Page */
+.channel-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+}
+.channel-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-4px);
+}
+.avail-banner {
+    background: rgba(13, 148, 136, 0.1);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+    border-radius: 16px;
+}
+.opento-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.opento-card:hover {
+    border-color: #334155;
+    background: rgba(30, 41, 59, 0.5);
+}
+.faq-item {
+    background: rgba(30, 41, 59, 0.2);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.faq-item:hover {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: #334155;
+}
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.1); }
-        }
-        .dot-blink { animation: blink 2.2s ease infinite; }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
+/* Education Page */
+.glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+}
+.glass-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+}
+.edu-chip {
+    font-family: monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #0f172a;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+}
+.glass-card:hover .edu-chip { border-color: #475569; color: #cbd5e1; }
+.edu-chip:hover {
+    background: #0d9488 !important;
+    border-color: #2dd4bf !important;
+    color: white !important;
+}
+.learning-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.learning-card:hover {
+    border-color: #334155;
+    background: rgba(30, 41, 59, 0.5);
+}
 
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
+/* Filter Buttons (Work, Projects, Skills, Hobbies pages) */
+.filter-btn {
+    font-family: monospace;
+    font-size: 11px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.filter-btn:hover { border-color: #475569; color: #f8fafc; }
+.filter-btn.active {
+    background: #0d9488;
+    color: white;
+    border-color: #2dd4bf;
+    box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+}
 
-        /* Education & Cert Cards */
-        .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-        }
-        .glass-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.6);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
+/* Work / Experience Page */
+.experience-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+}
+.experience-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.7);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+}
+.chip {
+    background: #1e293b;
+    border: 1px solid #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+.chip:hover {
+    background: #0d9488;
+    border-color: #2dd4bf;
+    color: white;
+    transform: translateY(-2px);
+}
+.dot-indicator { box-shadow: 0 0 12px #0d9488; }
 
-        /* Tech/Skill Chips */
-        .edu-chip {
-            font-family: monospace;
-            font-size: 10px;
-            padding: 3px 10px;
-            border-radius: 6px;
-            background: #0f172a;
-            color: #94a3b8;
-            border: 1px solid #334155;
-            transition: all 0.2s ease;
-        }
-        .glass-card:hover .edu-chip {
-            border-color: #475569;
-            color: #cbd5e1;
-        }
-        .edu-chip:hover {
-            background: #0d9488 !important;
-            border-color: #2dd4bf !important;
-            color: white !important;
-        }
+/* Hobbies Page */
+.hobby-hero {
+    background: rgba(30, 41, 59, 0.3);
+    border-left: 4px solid #0d9488;
+    border-radius: 0 16px 16px 0;
+    padding: 2rem;
+    font-style: italic;
+    color: #94a3b8;
+    line-height: 1.8;
+}
+.hobby-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.hobby-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-4px);
+}
+.hobby-card-bg {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 80px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+.interest-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.interest-card:hover {
+    border-color: #334155;
+    background: rgba(30, 41, 59, 0.5);
+}
+.status-card {
+    background: rgba(30, 41, 59, 0.2);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+.status-card:hover { border-color: #0d9488; }
 
-        /* Topic Icons */
-        .learning-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .learning-card:hover {
-            border-color: #334155;
-            background: rgba(30, 41, 59, 0.5);
-        }
+/* Projects & Skills Page */
+.proj-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.proj-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+}
+.proj-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #0d9488, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.proj-card:hover::before { opacity: 1; }
+.stack-pill {
+    font-family: monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #0f172a;
+    color: #cbd5e1;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+}
+.stack-pill:hover {
+    background: #0d9488;
+    border-color: #2dd4bf;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+}
 
-        /* Work Page - Filter Navigation Buttons */
-        .filter-btn {
-            font-family: monospace;
-            font-size: 11px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #1e293b;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
-        .filter-btn.active { 
-            background: #0d9488; 
-            color: white; 
-            border-color: #2dd4bf;
-            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
-        }
+/* Publications Page */
+.pub-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+}
+.pub-card:hover {
+    border-color: #0d9488;
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateX(6px);
+}
+.pub-chip {
+    font-family: monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #0f172a;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+.pub-card:hover .pub-chip { border-color: #475569; color: #cbd5e1; }
+.pub-chip:hover {
+    background: #0d9488 !important;
+    border-color: #2dd4bf !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+.topic-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.topic-card:hover {
+    border-color: #334155;
+    background: rgba(30, 41, 59, 0.5);
+}
+.cta-box {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 23, 42, 0.5));
+    border: 1px solid rgba(13, 148, 136, 0.3);
+    border-radius: 16px;
+}
 
-        /* Smooth card rendering transitions during filtering */
-        .experience-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
+/* Homepage */
+.profile-ring {
+    border: 2px solid #0d9488;
+    border-radius: 50%;
+    padding: 4px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+.profile-ring:hover {
+    transform: scale(1.1);
+    border-color: #2dd4bf;
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.3);
+}
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 5px;
+    object-fit: cover;
+    background: #1e293b;
+    transition: transform 0.3s ease;
+}
+.profile-ring:hover .profile-img { transform: scale(1.15); }
 
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
+.stat-card, .bio-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stat-card:hover {
+    background: rgba(45, 212, 191, 0.1);
+    border-color: #0d9488;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(13, 148, 136, 0.5);
+}
+.bio-card:hover {
+    border-color: #0d9488;
+    transform: translateY(-4px);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
+}
+.skill-tag {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+.skill-tag:hover {
+    background: #0d9488;
+    border-color: #2dd4bf;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+}
 
-        /* Hobby Hero Style */
-        .hobby-hero {
-            background: rgba(30, 41, 59, 0.3);
-            border-left: 4px solid #0d9488;
-            border-radius: 0 16px 16px 0;
-            padding: 2rem;
-            font-style: italic;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
+/* Typewriter cursor */
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.typewriter-cursor { animation: cursor-blink 0.75s ease infinite; }
 
-        /* Hobby Cards */
-        .hobby-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hobby-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.6);
-            transform: translateY(-4px);
-        }
-        .hobby-card-bg {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            font-size: 80px;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        /* Interest Cards */
-        .interest-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .interest-card:hover {
-            border-color: #334155;
-            background: rgba(30, 41, 59, 0.5);
-        }
-
-        /* Currently Cards */
-        .status-card {
-            background: rgba(30, 41, 59, 0.2);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
-        }
-        .status-card:hover {
-            border-color: #0d9488;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Card Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-
-        /* Avatar Expand Effect */
-        .profile-ring {
-            border: 2px solid #0d9488;
-            border-radius: 50%;
-            padding: 4px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-        .profile-ring:hover {
-            transform: scale(1.1);
-            border-color: #2dd4bf;
-            box-shadow: 0 0 25px rgba(45, 212, 191, 0.3);
-        }
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            padding: 5px;
-            object-fit: cover;
-            background: #1e293b;
-            transition: transform 0.3s ease;
-        }
-        .profile-ring:hover .profile-img {
-            transform: scale(1.15);
-        }
-
-        /* Glassmorphism Stat Cards - Hoverable */
-        .stat-card, .bio-card {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .stat-card:hover {
-            background: rgba(45, 212, 191, 0.1);
-            border-color: #0d9488;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px -10px rgba(13, 148, 136, 0.5);
-        }
-
-        .bio-card:hover {
-            border-color: #0d9488;
-            transform: translateY(-4px);
-            background: rgba(30, 41, 59, 0.8);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
-
-        /* Interactive Skill Tags */
-        .skill-tag {
-            background: #1e293b;
-            border: 1px solid #334155;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
-            cursor: default;
-        }
-        .skill-tag:hover {
-            background: #0d9488;
-            border-color: #2dd4bf;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
-        }
-
-        .nav-link:hover { color: #2dd4bf; }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-        /* Filter Buttons */
-        .filter-btn {
-            font-family: monospace;
-            font-size: 11px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #1e293b;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
-        .filter-btn.active { 
-            background: #0d9488; 
-            color: white; 
-            border-color: #2dd4bf;
-            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
-        }
-
-        /* Ecosystem Leadership Cards */
-        .proj-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        .proj-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.7);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
-        .proj-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, #0d9488, transparent);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .proj-card:hover::before { opacity: 1; }
-
-        /* Tech Tags / Skill Pills */
-        .stack-pill {
-            font-family: monospace;
-            font-size: 10px;
-            padding: 4px 10px;
-            border-radius: 4px;
-            background: #0f172a;
-            color: #cbd5e1;
-            border: 1px solid #334155;
-            transition: all 0.2s ease;
-        }
-        .stack-pill:hover {
-            background: #0d9488;
-            border-color: #2dd4bf;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
-        }
-        
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-        /* Filter Buttons */
-        .filter-btn {
-            font-family: monospace;
-            font-size: 11px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #1e293b;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
-        .filter-btn.active { 
-            background: #0d9488; 
-            color: white; 
-            border-color: #2dd4bf;
-            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
-        }
-
-        /* Project Cards */
-        .proj-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        .proj-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.7);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
-        .proj-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, #0d9488, transparent);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .proj-card:hover::before { opacity: 1; }
-
-        /* Tech Tags */
-        .stack-pill {
-            font-family: monospace;
-            font-size: 10px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: #0f172a;
-            color: #94a3b8;
-            border: 1px solid #334155;
-        }
-        .stack-pill:hover {
-            background: #0d9488;
-            border-color: #2dd4bf;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-        /* Publication Cards */
-        .pub-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-        }
-        .pub-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.6);
-            transform: translateX(6px);
-        }
-
-        /* Interactive Tech Chips */
-        .pub-chip {
-            font-family: monospace;
-            font-size: 10px;
-            padding: 3px 10px;
-            border-radius: 6px;
-            background: #0f172a;
-            color: #94a3b8;
-            border: 1px solid #334155;
-            transition: all 0.2s ease;
-            cursor: default;
-        }
-        .pub-card:hover .pub-chip {
-            border-color: #475569;
-            color: #cbd5e1;
-        }
-        .pub-chip:hover {
-            background: #0d9488 !important;
-            border-color: #2dd4bf !important;
-            color: white !important;
-            transform: translateY(-2px);
-        }
-
-        /* Topic Cards */
-        .topic-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .topic-card:hover {
-            border-color: #334155;
-            background: rgba(30, 41, 59, 0.5);
-        }
-
-        /* Call to Action Box */
-        .cta-box {
-            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 23, 42, 0.5));
-            border: 1px solid rgba(13, 148, 136, 0.3);
-            border-radius: 16px;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-        /* Filter Buttons */
-        .filter-btn {
-            font-family: monospace;
-            font-size: 11px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            background: #1e293b;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .filter-btn:hover { border-color: #475569; color: #f8fafc; }
-        .filter-btn.active { 
-            background: #0d9488; 
-            color: white; 
-            border-color: #2dd4bf;
-            box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
-        }
-
-        /* Ecosystem Skill Cards */
-        .proj-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        .proj-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.7);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
-        .proj-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, #0d9488, transparent);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .proj-card:hover::before { opacity: 1; }
-
-        /* Tech Tags */
-        .stack-pill {
-            font-family: monospace;
-            font-size: 10px;
-            padding: 4px 10px;
-            border-radius: 4px;
-            background: #0f172a;
-            color: #cbd5e1;
-            border: 1px solid #334155;
-            transition: all 0.2s ease;
-        }
-        .stack-pill:hover {
-            background: #0d9488;
-            border-color: #2dd4bf;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
-        }
-        
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-body { background-color: #0f172a; color: #f8fafc; }
-        
-        /* Navigation Style */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
-
-        /* Timeline & Experience Cards */
-        .experience-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 16px;
-        }
-        .experience-card:hover {
-            border-color: #0d9488;
-            background: rgba(30, 41, 59, 0.7);
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px -15px rgba(13, 148, 136, 0.3);
-        }
-
-        /* Stat/Impact Cards */
-        .stat-card {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid #334155;
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            border-color: #0d9488;
-            background: rgba(45, 212, 191, 0.1);
-            transform: translateY(-5px);
-        }
-
-        /* Tech Chips */
-        .chip {
-            background: #1e293b;
-            border: 1px solid #475569;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-family: monospace;
-            transition: all 0.2s ease;
-            cursor: default;
-        }
-        .chip:hover {
-            background: #0d9488;
-            border-color: #2dd4bf;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .dot-indicator {
-            box-shadow: 0 0 12px #0d9488;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        /* Maintaining your specific UI styles */
-        .nav-card {
-            background-color: rgba(15, 23, 42, 0.8);
-            background-image: radial-gradient(#334155 1px, transparent 1px);
-            background-size: 24px 24px;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-        }
-        .nav-link:hover { color: #2dd4bf; }
+/* CTA Buttons (Homepage hero) */
+.cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: #0d9488;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #2dd4bf;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+.cta-btn-primary:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.45);
+}
+.cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: transparent;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+.cta-btn-secondary:hover {
+    border-color: #0d9488;
+    color: white;
+    transform: translateY(-2px);
+}

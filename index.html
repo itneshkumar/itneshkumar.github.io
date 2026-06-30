@@ -29,10 +29,13 @@
                     <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4 whitespace-nowrap uppercase">
                         ITNESH <span class="text-slate-500">KUMAR</span>
                     </h1>
-                    <h2 class="text-teal-400 font-mono text-xl mb-6 tracking-widest uppercase">Lead Data Scientist</h2>
-                    <p class="text-slate-400 text-lg leading-relaxed max-w-xl mb-12">
-                        Architecting multi-agent AI systems & production RAG pipelines for enterprise scale. 
-                        8+ years across GenAI, NLP & Computer Vision.
+                    <h2 class="text-teal-400 font-mono text-xl mb-3 tracking-widest uppercase">Lead Data Scientist</h2>
+                    <div class="font-mono text-base text-slate-300 mb-6 flex items-center gap-2">
+                        <span class="text-teal-500 select-none text-xs">▶</span>
+                        <span id="typewriter-text"></span><span class="text-teal-400 typewriter-cursor">_</span>
+                    </div>
+                    <p class="text-slate-400 text-lg leading-relaxed max-w-xl mb-6">
+                        8+ years across GenAI, NLP & Computer Vision — from production Computer Vision systems to architecting multi-agent platforms for Fortune 500 clients.
                     </p>
 
                     <div class="grid grid-cols-3 gap-4">
@@ -110,6 +113,33 @@
         </div>
     </main>
     <div id="footer-root"></div>
+    <script>
+    (function () {
+        var phrases = [
+            'Architecting Multi-Agent Systems',
+            'Building Agentic RAG Pipelines',
+            'LLM Evaluation & Observability',
+            'Enterprise GenAI Architecture',
+            'Computer Vision at Production Scale'
+        ];
+        var idx = 0, ch = 0, deleting = false;
+        function tick() {
+            var el = document.getElementById('typewriter-text');
+            if (!el) return;
+            var phrase = phrases[idx];
+            if (!deleting) {
+                el.textContent = phrase.slice(0, ++ch);
+                if (ch === phrase.length) { deleting = true; setTimeout(tick, 2000); return; }
+                setTimeout(tick, 60);
+            } else {
+                el.textContent = phrase.slice(0, --ch);
+                if (ch === 0) { deleting = false; idx = (idx + 1) % phrases.length; setTimeout(tick, 350); return; }
+                setTimeout(tick, 28);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(tick, 900); });
+    })();
+    </script>
     <script src="nav.js"></script>
 </body>
 </html>
