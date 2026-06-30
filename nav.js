@@ -301,6 +301,56 @@ function initEnhancements() {
     }
 }
 
+function injectPageMeta() {
+    // SVG favicon — "IK" monogram in teal on dark background
+    if (!document.querySelector('link[rel="icon"]')) {
+        const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="%230f172a"/><text x="50%" y="54%" dominant-baseline="central" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="13" fill="%230d9488">IK</text></svg>';
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.type = 'image/svg+xml';
+        link.href = 'data:image/svg+xml,' + svg;
+        document.head.appendChild(link);
+    }
+    // OG image for social sharing previews
+    if (!document.querySelector('meta[property="og:image"]')) {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:image');
+        meta.content = 'https://itnesh.com/new.png';
+        document.head.appendChild(meta);
+    }
+}
+
+function initCopyEmail() {
+    const emailLink = document.querySelector('a[href^="mailto:"]');
+    if (!emailLink) return;
+    const emailDisplay = emailLink.querySelector('.text-lg.font-bold');
+    if (!emailDisplay) return;
+
+    const email = emailDisplay.textContent.trim();
+    const row = document.createElement('div');
+    row.className = 'flex items-center gap-2';
+    emailDisplay.parentNode.insertBefore(row, emailDisplay);
+    row.appendChild(emailDisplay);
+
+    const btn = document.createElement('button');
+    btn.title = 'Copy email address';
+    btn.className = 'text-slate-500 hover:text-teal-400 transition-colors flex-shrink-0 p-1';
+    const iconCopy = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+    const iconDone = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>';
+    btn.innerHTML = iconCopy;
+
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigator.clipboard.writeText(email).then(() => {
+            btn.innerHTML = iconDone;
+            btn.style.color = '#0d9488';
+            setTimeout(() => { btn.innerHTML = iconCopy; btn.style.color = ''; }, 2000);
+        });
+    });
+    row.appendChild(btn);
+}
+
 function initFaqAccordion() {
     const items = document.querySelectorAll('.faq-item');
     if (!items.length) return;
@@ -335,12 +385,14 @@ function initFaqAccordion() {
 }
 
 function initPage() {
+    injectPageMeta();
     injectNav();
     injectFooter();
     initFilterButtons();
     initWorkExperienceFilters();
     initHobbiesFilters();
     initFaqAccordion();
+    initCopyEmail();
     initEnhancements();
 }
 
