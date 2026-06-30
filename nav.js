@@ -226,12 +226,86 @@ function initHobbiesFilters() {
     });
 }
 
+function initEnhancements() {
+    // Reading progress bar
+    const bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    document.body.prepend(bar);
+    window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+    }, { passive: true });
+
+    // Scroll-to-top button
+    const btn = document.createElement('button');
+    btn.className = 'scroll-top-btn';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>';
+    document.body.appendChild(btn);
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 300), { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Scroll reveal for all card types
+    const cardSelectors = [
+        '.proj-card', '.experience-card', '.glass-card', '.hobby-card',
+        '.pub-card', '.bio-card', '.channel-card', '.interest-card',
+        '.learning-card', '.topic-card', '.opento-card', '.status-card',
+        '.faq-item', '.stat-card'
+    ];
+    const cards = document.querySelectorAll(cardSelectors.join(', '));
+    if (cards.length && 'IntersectionObserver' in window) {
+        cards.forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = Math.min(i % 6, 5) * 60 + 'ms';
+        });
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+        cards.forEach(el => revealObserver.observe(el));
+    }
+
+    // Count-up animation for stat numbers
+    const statNums = document.querySelectorAll('.stat-card .text-3xl');
+    if (statNums.length && 'IntersectionObserver' in window) {
+        const countObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const raw = el.textContent.trim();
+                const match = raw.match(/[\d.]+/);
+                if (!match) return;
+                const num = parseFloat(match[0]);
+                const prefix = raw.slice(0, match.index);
+                const suffix = raw.slice(match.index + match[0].length);
+                const isInt = Number.isInteger(num);
+                const dur = 1000;
+                const t0 = performance.now();
+                const step = ts => {
+                    const p = Math.min((ts - t0) / dur, 1);
+                    const v = num * (1 - Math.pow(1 - p, 3));
+                    el.textContent = prefix + (isInt ? Math.round(v) : v.toFixed(1)) + suffix;
+                    if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+                countObserver.unobserve(el);
+            });
+        }, { threshold: 0.6 });
+        statNums.forEach(el => countObserver.observe(el));
+    }
+}
+
 function initPage() {
     injectNav();
     injectFooter();
     initFilterButtons();
     initWorkExperienceFilters();
     initHobbiesFilters();
+    initEnhancements();
 }
 
 if (document.readyState === 'loading') {

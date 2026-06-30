@@ -361,6 +361,58 @@ body { background-color: #0f172a; color: #f8fafc; }
     box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
 }
 
+/* Page entrance */
+@keyframes page-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+main { animation: page-fade-in 0.45s ease both; }
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Reading progress bar */
+.reading-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #0d9488, #2dd4bf);
+    z-index: 9999;
+    transition: width 0.08s linear;
+    pointer-events: none;
+}
+
+/* Scroll-to-top button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 40px; height: 40px;
+    background: rgba(13, 148, 136, 0.85);
+    border: 1px solid #2dd4bf;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+    z-index: 9998;
+    backdrop-filter: blur(8px);
+}
+.scroll-top-btn.visible { opacity: 1; transform: translateY(0); }
+.scroll-top-btn:hover {
+    box-shadow: 0 0 20px rgba(13, 148, 136, 0.55);
+    transform: translateY(-3px);
+}
+
 /* Typewriter cursor */
 @keyframes cursor-blink {
     0%, 100% { opacity: 1; }
