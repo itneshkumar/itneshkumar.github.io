@@ -25,6 +25,44 @@
             <p class="text-slate-400 text-lg max-w-2xl">Sharing insights from building production AI systems—from multi-agent orchestration to large-scale NLP.</p>
         </div>
 
+        <div class="mb-12">
+            <svg viewBox="0 0 1000 120" class="w-full h-auto agent-graph" aria-hidden="true">
+                <path class="agent-graph-line" d="M500,60 L120,25" style="animation-delay:0.1s"/>
+                <path class="agent-graph-line" d="M500,60 L340,95" style="animation-delay:0.25s"/>
+                <path class="agent-graph-line" d="M500,60 L660,25" style="animation-delay:0.4s"/>
+                <path class="agent-graph-line" d="M500,60 L880,95" style="animation-delay:0.55s"/>
+
+                <circle class="graph-packet" r="3">
+                    <animateMotion dur="2.4s" begin="1.6s" repeatCount="indefinite" path="M120,25 L500,60"/>
+                </circle>
+                <circle class="graph-packet" r="3">
+                    <animateMotion dur="2.4s" begin="2s" repeatCount="indefinite" path="M340,95 L500,60"/>
+                </circle>
+                <circle class="graph-packet" r="3">
+                    <animateMotion dur="2.4s" begin="2.4s" repeatCount="indefinite" path="M660,25 L500,60"/>
+                </circle>
+                <circle class="graph-packet" r="3">
+                    <animateMotion dur="2.4s" begin="2.8s" repeatCount="indefinite" path="M880,95 L500,60"/>
+                </circle>
+
+                <circle class="graph-halo" cx="500" cy="60" r="11" style="animation:graph-halo-pulse 2.4s ease-in-out infinite 1.4s"/>
+                <circle class="graph-node graph-node-center" cx="500" cy="60" r="9"/>
+                <text class="graph-label" x="500" y="83" text-anchor="middle" style="fill:#2dd4bf;animation-delay:0.4s">ARTICLES</text>
+
+                <circle class="graph-node" cx="120" cy="25" r="5" style="animation-delay:0.5s"/>
+                <text class="graph-label" x="120" y="17" text-anchor="middle" style="animation-delay:0.7s">MEDIUM</text>
+
+                <circle class="graph-node" cx="340" cy="95" r="5" style="animation-delay:0.65s"/>
+                <text class="graph-label" x="340" y="112" text-anchor="middle" style="animation-delay:0.85s">RAG</text>
+
+                <circle class="graph-node" cx="660" cy="25" r="5" style="animation-delay:0.8s"/>
+                <text class="graph-label" x="660" y="17" text-anchor="middle" style="animation-delay:1s">LINKEDIN</text>
+
+                <circle class="graph-node" cx="880" cy="95" r="5" style="animation-delay:0.95s"/>
+                <text class="graph-label" x="880" y="112" text-anchor="middle" style="animation-delay:1.15s">MLOPS</text>
+            </svg>
+        </div>
+
         <div class="space-y-6 mb-12">
             <h3 class="text-xs font-mono text-slate-500 uppercase tracking-widest mb-6">Articles & Papers</h3>
 

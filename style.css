@@ -379,6 +379,138 @@ body { background-color: #0f172a; color: #f8fafc; }
     box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
 }
 
+/* Homepage — Multi-Agent Architecture motion graphic */
+.agent-graph-line {
+    fill: none;
+    stroke: #334155;
+    stroke-width: 1.5;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: graph-draw 1.4s ease forwards;
+}
+@keyframes graph-draw {
+    to { stroke-dashoffset: 0; }
+}
+.graph-node {
+    fill: #0d9488;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: graph-node-in 0.5s ease forwards;
+}
+.graph-node-center {
+    fill: #2dd4bf;
+    animation: graph-node-in 0.5s ease forwards, graph-pulse 2.4s ease-in-out infinite 1.6s;
+}
+@keyframes graph-node-in {
+    from { opacity: 0; transform: scale(0.3); }
+    to   { opacity: 1; transform: scale(1); }
+}
+@keyframes graph-pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.25); }
+}
+.graph-halo {
+    fill: none;
+    stroke: #2dd4bf;
+    stroke-width: 1;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: graph-halo-pulse 2.4s ease-in-out infinite 1.6s;
+}
+@keyframes graph-halo-pulse {
+    0%   { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2.4); }
+}
+.graph-label {
+    font-family: monospace;
+    font-size: 10px;
+    fill: #64748b;
+    opacity: 0;
+    animation: graph-label-in 0.5s ease forwards;
+}
+@keyframes graph-label-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.graph-packet {
+    fill: #5eead4;
+    filter: drop-shadow(0 0 3px rgba(94, 234, 212, 0.8));
+}
+/* Hobbies page — mountain/sun/cloud motion graphic */
+.hobby-mountain-line {
+    fill: none;
+    stroke: #475569;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: graph-draw 1.8s ease forwards;
+}
+.hobby-sun {
+    fill: #f59e0b;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: graph-node-in 0.6s ease forwards 1s, sun-pulse 3s ease-in-out infinite 1.6s;
+}
+@keyframes sun-pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.12); }
+}
+.hobby-sun-ray {
+    stroke: #f59e0b;
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0;
+    animation: graph-label-in 0.4s ease forwards;
+}
+.hobby-cloud {
+    fill: #64748b;
+    opacity: 0.5;
+}
+.cloud-drift {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cloud-drift 9s ease-in-out infinite;
+}
+@keyframes cloud-drift {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(45px); }
+}
+
+/* Contact page — broadcast ping / orbit motion graphic */
+.ping-ring {
+    fill: none;
+    stroke: #0d9488;
+    stroke-width: 1.5;
+    r: 10;
+    opacity: 0;
+    animation: ping-expand 3s ease-out infinite;
+}
+@keyframes ping-expand {
+    0%   { r: 10; opacity: 0.6; }
+    100% { r: 70; opacity: 0; }
+}
+.orbit-node {
+    fill: #5eead4;
+    opacity: 0;
+    animation: graph-node-in 0.5s ease forwards 1.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .agent-graph-line, .graph-node, .graph-node-center, .graph-halo, .graph-label,
+    .hobby-mountain-line, .hobby-sun, .hobby-sun-ray, .cloud-drift,
+    .ping-ring, .orbit-node {
+        animation: none !important;
+        opacity: 1 !important;
+        stroke-dashoffset: 0 !important;
+    }
+    .graph-packet, .ping-ring { display: none; }
+}
+
 /* Page entrance */
 @keyframes page-fade-in {
     from { opacity: 0; transform: translateY(10px); }

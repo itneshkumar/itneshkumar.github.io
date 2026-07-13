@@ -25,6 +25,26 @@
             <p class="text-slate-400 text-lg max-w-2xl">Open to conversations, collaborations, and opportunities. Pick the channel that works best for you.</p>
         </div>
 
+        <div class="mb-12">
+            <svg viewBox="0 0 1000 150" class="w-full h-auto agent-graph" aria-hidden="true">
+                <circle class="ping-ring" cx="500" cy="75" style="animation-delay:0s"/>
+                <circle class="ping-ring" cx="500" cy="75" style="animation-delay:1s"/>
+                <circle class="ping-ring" cx="500" cy="75" style="animation-delay:2s"/>
+
+                <g class="orbit-group">
+                    <animateTransform attributeName="transform" type="rotate" from="0 500 75" to="360 500 75" dur="18s" repeatCount="indefinite"/>
+                    <circle class="orbit-node" cx="570" cy="75" r="5"/>
+                    <circle class="orbit-node" cx="500" cy="145" r="5"/>
+                    <circle class="orbit-node" cx="430" cy="75" r="5"/>
+                    <circle class="orbit-node" cx="500" cy="5" r="5"/>
+                </g>
+
+                <circle class="graph-halo" cx="500" cy="75" r="11" style="animation:graph-halo-pulse 2.4s ease-in-out infinite 1s"/>
+                <circle class="graph-node graph-node-center" cx="500" cy="75" r="9" style="animation-delay:0.4s"/>
+                <text class="graph-label" x="500" y="102" text-anchor="middle" style="fill:#2dd4bf;animation-delay:0.6s">AVAILABLE</text>
+            </svg>
+        </div>
+
         <div class="avail-banner p-6 mb-16 flex items-center gap-6">
             <div class="w-3 h-3 rounded-full bg-teal-500 dot-blink flex-shrink-0"></div>
             <p class="text-sm text-teal-100 leading-relaxed">
