@@ -13,13 +13,14 @@ function normalizePathname(pathname) {
 
 function getActivePage() {
     const page = normalizePathname(window.location.pathname);
-    const validPages = new Set(['index', 'work', 'projects', 'publications', 'education', 'leadership', 'hobbies', 'contact', 'skills']);
+    const validPages = new Set(['index', 'work', 'mission', 'projects', 'publications', 'education', 'leadership', 'hobbies', 'contact', 'skills']);
     return validPages.has(page) ? page : 'index';
 }
 
 function renderNav(activePage) {
     const tabs = [
         { id: 'work', icon: '💼', label: 'Work', href: '/work/' },
+        { id: 'mission', icon: '🧭', label: 'Mission', href: '/mission/' },
         { id: 'projects', icon: '🚀', label: 'Projects', href: '/projects/' },
         { id: 'skills', icon: '🧠', label: 'Skills', href: '/skills/' },
         { id: 'publications', icon: '📄', label: 'Publications', href: '/publications/' },
